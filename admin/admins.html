@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#09090f"><title>Quản trị viên | SCENTIE Admin</title><link rel="stylesheet" href="../css/admin.css"></head>
+<body class="admin-dashboard-page"><div class="admin-layout">
+<aside class="admin-sidebar"><a href="./index.html" class="admin-brand">SCENTIE<span>.</span><small>NOCTURNE CONTROL CENTER</small></a><span class="admin-sidebar-label">WORKSPACE</span><nav class="admin-nav"><a class="admin-nav-link " href="./index.html"><span class="nav-icon">◫</span><span>Tổng quan</span></a>
+<a class="admin-nav-link " href="./orders.html"><span class="nav-icon">▤</span><span>Đơn hàng</span></a>
+<a class="admin-nav-link " href="./products.html"><span class="nav-icon">◇</span><span>Sản phẩm</span></a>
+<a class="admin-nav-link " href="./customers.html"><span class="nav-icon">♙</span><span>Khách hàng</span></a>
+<a class="admin-nav-link active" href="./admins.html"><span class="nav-icon">✳</span><span>Quản trị viên</span></a></nav><div class="admin-sidebar-spacer"></div><div class="admin-sidebar-bottom"><a href="../index.html" class="admin-back-link">↗ Quay lại cửa hàng</a><button type="button" id="adminLogoutButton">↗ Đăng xuất</button></div></aside>
+<main class="admin-main"><header class="admin-topbar"><div><span class="admin-eyebrow">SCENTIE / CONTROL CENTER</span><h1>Quản trị viên</h1></div><div class="admin-topbar-actions"><div class="admin-profile"><div class="admin-avatar" id="adminAvatar">A</div><div><strong id="adminUserLabel">Administrator</strong><span>Quản trị viên</span></div></div></div></header>
+
+<div class="admin-page-title"><h1>Access & team</h1><p>Danh sách tài khoản được cấp quyền quản trị SCENTIE.</p></div>
+<div class="admin-notice">Tạo tài khoản đăng nhập mới trong Supabase Authentication → Users trước. Sau đó dùng User UID để cấp quyền tại đây. Không cần và không được đưa service-role key vào trình duyệt.</div>
+<section class="admin-panel" style="margin-bottom:16px"><div class="admin-panel-heading"><div><h2>Cấp quyền Admin</h2><p>Chỉ tài khoản đã tồn tại trong Supabase Auth mới được cấp quyền.</p></div></div><div class="admin-toolbar"><input id="adminUserIdInput" class="admin-input admin-search" placeholder="Dán User UID (UUID)"><button id="grantAdminButton" class="admin-btn">＋ Cấp quyền</button></div></section>
+<section class="admin-panel"><div class="admin-panel-heading"><div><h2>Admin access list</h2><p>Các tài khoản hiện có quyền truy cập Control Center.</p></div><button id="refreshAdmins" class="admin-btn secondary">↻ Làm mới</button></div><div class="admin-table-wrapper"><table class="admin-table"><thead><tr><th>USER UID</th><th>EMAIL</th><th>NGÀY CẤP QUYỀN</th><th></th></tr></thead><tbody id="adminsTable"><tr><td colspan="4" class="admin-table-empty">Đang tải...</td></tr></tbody></table></div></section>
+<footer class="admin-footer">© 2026 SCENTIE · NOCTURNE CONTROL CENTER</footer></main></div><div id="adminToast" class="admin-toast" role="status"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../js/supabase-client.js"></script><script src="../js/admin-guard.js"></script>
+<script src="../js/admin-common.js"></script><script src="../js/admin-admins.js"></script></body></html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff8fb">
+    <title>Thanh toán — SCENTIE</title>
+    <meta name="description" content="Hoàn tất đơn hàng SCENTIE với thông tin giao hàng và phương thức thanh toán an toàn.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/site-transition.css">
+    <link rel="stylesheet" href="../css/account-header.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+</head>
+<body class="checkout-page">
+
+<header class="site-header">
+        <div class="container header-inner">
+
+            <button class="header-icon mobile-menu-btn"
+                    id="mobileMenuBtn"
+                    aria-label="Mở menu"
+                    aria-expanded="false">
+                ☰
+            </button>
+
+            <a href="../index.html" class="brand-logo">
+                <img src="../assets/images/logo/logo-scentie-den.png"
+                     alt="SCENTIE Logo">
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <a href="../index.html">TRANG CHỦ</a>
+                <a href="shop.html">SẢN PHẨM</a>
+                <a href="about.html">VỀ SCENTIE</a>
+                <a href="find-your-mood.html">TÌM MOOD</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <!-- SEARCH BUTTON -->
+                <button type="button"
+                        class="header-search-btn"
+                        id="searchOpenBtn"
+                        aria-label="Mở tìm kiếm"
+                        aria-controls="searchOverlay"
+                        aria-expanded="false">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="19"
+                         height="19"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.8"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="m20 20-4-4"></path>
+                    </svg>
+
+                    <span>Tìm kiếm mood của bạn...</span>
+                </button>
+
+                <!-- CART BUTTON -->
+                <a href="cart.html"
+                   class="header-cart"
+                   aria-label="Giỏ hàng">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="22"
+                         height="22"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.7"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                </a>
+
+                <!-- ACCOUNT BUTTON -->
+                <a href="account.html"
+                   class="header-account"
+                   aria-label="Đăng nhập hoặc đăng ký">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="21"
+                         height="21"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.7"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M5 21v-2a7 7 0 0 1 14 0v2"></path>
+                    </svg>
+
+                    <span>Đăng nhập / Đăng ký</span>
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+<div class="search-overlay"
+     id="searchOverlay"
+     aria-hidden="true">
+
+    <div class="search-panel">
+
+        <button type="button"
+                class="search-close"
+                id="searchCloseBtn"
+                aria-label="Đóng tìm kiếm">
+            &times;
+        </button>
+
+        <p class="search-label">
+            SCENTIE SEARCH ✦
+        </p>
+
+        <h2>
+            Bạn đang tìm kiếm sản phẩm nào?
+        </h2>
+
+        <form class="search-form" id="searchForm">
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Nhập tên sản phẩm, mùi hương..."
+                autocomplete="off"
+                aria-label="Nhập từ khóa tìm kiếm"
+            >
+
+            <button type="submit"
+                    class="search-submit"
+                    aria-label="Tìm kiếm">
+                ⌕
+            </button>
+
+        </form>
+
+        
+        <div class="search-suggestions">
+            <p>GỢI Ý TÌM KIẾM</p>
+
+            <div class="search-tags">
+                <button type="button" data-mood="focus">Focus</button>
+                <button type="button" data-mood="energy">Energy</button>
+                <button type="button" data-mood="calm">Calm</button>
+                <button type="button" data-mood="date">Date</button>
+                <button type="button" data-mood="fun">Fun</button>
+            </div>
+        </div>
+
+        <!-- LIVE SEARCH RESULTS -->
+        <div class="search-live-results" id="searchLiveResults">
+            <!-- Search suggestions will appear here -->
+        </div>
+    </div>
+
+</div>
+
+<main class="checkout-main">
+    <div class="container">
+        <nav class="checkout-breadcrumb" aria-label="Điều hướng">
+            <a href="../index.html">Trang chủ</a><span>/</span>
+            <a href="cart.html">Giỏ hàng</a><span>/</span>
+            <span aria-current="page">Thanh toán</span>
+        </nav>
+
+        <section class="checkout-hero">
+            <div class="checkout-hero__copy">
+                <span class="checkout-eyebrow"><i></i> YOUR MOOD IS ALMOST YOURS</span>
+                <h1>Thêm một bước<br><em>để mood về nhà.</em></h1>
+                <p>Cho SCENTIE biết nơi bạn muốn nhận những lựa chọn yêu thích. Mọi thứ đã sẵn sàng rồi!</p>
+            </div>
+            <div class="checkout-hero__art" aria-hidden="true">
+                <span class="checkout-orbit checkout-orbit--one"></span>
+                <span class="checkout-orbit checkout-orbit--two"></span>
+                <span class="checkout-art-glow"></span>
+                <img src="../assets/images/mockups/mockup-calm.png" alt="">
+                <span class="checkout-art-tag checkout-art-tag--one">MADE FOR YOUR MOOD</span>
+                <span class="checkout-art-tag checkout-art-tag--two">SCENTIE ✦</span>
+            </div>
+            <div class="checkout-steps" aria-label="Tiến trình đặt hàng">
+                <span class="checkout-step checkout-step--done"><b>01</b> Giỏ hàng</span>
+                <i></i>
+                <span class="checkout-step checkout-step--active"><b>02</b> Thông tin nhận hàng</span>
+                <i></i>
+                <span class="checkout-step"><b>03</b> Hoàn tất</span>
+            </div>
+        </section>
+
+        <div class="checkout-layout">
+            <form id="checkoutForm" class="checkout-form" novalidate>
+                <section class="checkout-card">
+                    <div class="checkout-section-heading">
+                        <span class="checkout-section-number">01</span>
+                        <div>
+                            <span class="checkout-section-kicker">DELIVERY DETAILS</span>
+                            <h2>Thông tin người nhận</h2>
+                            <p>Không cần đăng nhập — bạn vẫn có thể đặt hàng dễ dàng.</p>
+                        </div>
+                    </div>
+
+                    <div class="checkout-fields">
+                        <label class="checkout-field">
+                            <span>Họ và tên <b>*</b></span>
+                            <input name="recipient_name" id="recipientName" autocomplete="name" required maxlength="120" placeholder="Tên người nhận">
+                        </label>
+                        <label class="checkout-field">
+                            <span>Số điện thoại <b>*</b></span>
+                            <input name="recipient_phone" id="recipientPhone" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9+().\s-]{8,30}" required maxlength="30" placeholder="Ví dụ: 09xx xxx xxx">
+                        </label>
+                        <label class="checkout-field">
+                            <span>Tỉnh / Thành phố <b>*</b></span>
+                            <input name="province" autocomplete="address-level1" required maxlength="120" placeholder="Ví dụ: TP. Hồ Chí Minh">
+                        </label>
+                        <label class="checkout-field">
+                            <span>Quận / Huyện <b>*</b></span>
+                            <input name="district" autocomplete="address-level2" required maxlength="120" placeholder="Quận / huyện">
+                        </label>
+                        <label class="checkout-field">
+                            <span>Phường / Xã <b>*</b></span>
+                            <input name="ward" required maxlength="120" placeholder="Phường / xã">
+                        </label>
+                        <label class="checkout-field checkout-field--full">
+                            <span>Địa chỉ cụ thể <b>*</b></span>
+                            <input name="address_line" autocomplete="street-address" required maxlength="300" placeholder="Số nhà, tên đường, tòa nhà...">
+                        </label>
+                        <label class="checkout-field checkout-field--full">
+                            <span>Ghi chú đơn hàng <small>Không bắt buộc</small></span>
+                            <textarea name="customer_note" rows="3" maxlength="1000" placeholder="Lời nhắn cho SCENTIE hoặc lưu ý khi giao hàng..."></textarea>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="checkout-card">
+                    <div class="checkout-section-heading">
+                        <span class="checkout-section-number">02</span>
+                        <div>
+                            <span class="checkout-section-kicker">PAYMENT METHOD</span>
+                            <h2>Phương thức thanh toán</h2>
+                            <p>Chọn cách thanh toán phù hợp với bạn.</p>
+                        </div>
+                    </div>
+                    <label class="payment-option payment-option--selected">
+                        <input type="radio" name="payment_method" value="cod" checked>
+                        <span class="payment-option__icon" aria-hidden="true">₫</span>
+                        <span class="payment-option__copy">
+                            <strong>Thanh toán khi nhận hàng (COD)</strong>
+                            <small>Thanh toán trực tiếp cho đơn vị giao hàng.</small>
+                        </span>
+                        <span class="payment-option__check" aria-hidden="true">✓</span>
+                    </label>
+                    <div class="payment-note"><span>✦</span> Thanh toán VNPay sẽ được SCENTIE cập nhật trong giai đoạn tiếp theo.</div>
+                </section>
+
+                <div class="checkout-message" id="checkoutMessage" role="alert" aria-live="polite" hidden></div>
+                <button class="checkout-submit" id="placeOrderBtn" type="submit">
+                    <span>HOÀN TẤT ĐẶT HÀNG</span><b>↗</b>
+                </button>
+                <p class="checkout-terms">Bằng việc đặt hàng, bạn xác nhận thông tin giao hàng đã cung cấp là chính xác.</p>
+            </form>
+
+            <aside class="checkout-summary" aria-label="Tóm tắt đơn hàng">
+                <div class="checkout-summary__top">
+                    <span class="checkout-eyebrow">YOUR MOOD BOX</span>
+                    <span class="checkout-summary__spark">✳</span>
+                </div>
+                <h2>Đơn hàng của bạn</h2>
+                <div id="checkoutItems" class="checkout-items" aria-live="polite"></div>
+                <div class="checkout-summary__lines">
+                    <div class="checkout-summary-line"><span>Tạm tính</span><strong id="checkoutSubtotal">0đ</strong></div>
+                    <div class="checkout-summary-line"><span>Phí vận chuyển</span><strong id="checkoutShippingFee">30.000đ</strong></div>
+                    <div class="checkout-summary-total"><span>Tổng thanh toán</span><strong id="checkoutTotal">0đ</strong></div>
+                </div>
+                <p class="checkout-shipping-note"><span>✦</span> Phí vận chuyển cố định 30.000đ cho mỗi đơn hàng.</p>
+                <a class="checkout-back-link" href="cart.html">← Quay lại giỏ hàng</a>
+                <div class="checkout-summary__seal"><span>♡</span><p>Được chuẩn bị bằng một chút yêu thương từ SCENTIE.</p></div>
+            </aside>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-main">
+
+                <div class="footer-brand">
+
+                    <a href="../index.html" class="footer-logo">
+                        <img src="../assets/images/logo/logo-scentie-trang.png"
+                             alt="SCENTIE Logo">
+                    </a>
+
+                    <p>
+                        Wear your mood.<br>
+                        Mang theo mood của bạn, ở bất cứ đâu.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>KHÁM PHÁ</h3>
+
+                    <a href="shop.html">Sản phẩm</a>
+                    <a href="collections.html">Bộ sưu tập</a>
+                    <a href="about.html">Về SCENTIE</a>
+                    <a href="find-your-mood.html">Tìm mood</a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>HỖ TRỢ</h3>
+
+                    <a href="faq.html">Câu hỏi thường gặp</a>
+                    <a href="faq.html">Hướng dẫn sử dụng</a>
+                    <a href="faq.html">Chính sách mua hàng</a>
+                    <a href="faq.html">Liên hệ</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+                © 2026 SCENTIE. ALL RIGHTS RESERVED.
+            </div>
+
+        </div>
+
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase-client.js"></script>
+<script src="../js/account-header.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/products.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/cart.js"></script>
+<script src="../js/cart-sync.js"></script>
+<script src="../js/checkout.js"></script>
+</body>
+</html>

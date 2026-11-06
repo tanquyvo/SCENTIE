@@ -1,0 +1,540 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#faf7ff">
+
+    <title>SCENTIE — Mang theo tâm trạng của bạn</title>
+    <meta name="description" content="Khám phá thế giới SCENTIE — miếng dán hương thơm mang theo tâm trạng và cá tính của bạn mỗi ngày.">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/product-detail.css">
+    <link rel="stylesheet" href="../css/site-transition.css">
+    <link rel="stylesheet" href="../css/account-header.css">
+</head>
+
+<body class="product-detail-page">
+
+<!-- ========================================
+     SCENTIE HEADER - HOMEPAGE VERSION
+     ======================================== -->
+
+<header class="site-header">
+    <div class="container header-inner">
+
+        <button
+            class="header-icon mobile-menu-btn"
+            id="mobileMenuBtn"
+            type="button"
+            aria-label="Mở menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <a href="../index.html" class="brand-logo">
+            <img
+                src="../assets/images/logo/logo-scentie-den.png"
+                alt="SCENTIE"
+            >
+        </a>
+
+        <nav class="main-nav" id="mainNav">
+            <a href="../index.html">TRANG CHỦ</a>
+            <a href="shop.html">SẢN PHẨM</a>
+            <a href="about.html">VỀ SCENTIE</a>
+            <a href="find-your-mood.html">TÌM MOOD</a>
+        </nav>
+
+        <div class="header-actions">
+
+            <button
+                type="button"
+                class="header-search-btn"
+                id="searchOpenBtn"
+                aria-label="Mở tìm kiếm"
+                aria-controls="searchOverlay"
+                aria-expanded="false"
+            >
+                <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="m20 20-4-4"></path>
+                </svg>
+
+                <span>Tìm kiếm mood của bạn...</span>
+            </button>
+
+            <a
+                href="cart.html"
+                class="header-cart"
+                aria-label="Giỏ hàng"
+            >
+                <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <path d="M3 3h2l2.4 12.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L22 8H6"></path>
+                    <circle cx="10" cy="21" r="1"></circle>
+                    <circle cx="19" cy="21" r="1"></circle>
+                </svg>
+            </a>
+
+            <a
+                href="account.html"
+                class="header-account"
+                aria-label="Đăng nhập hoặc đăng ký"
+            >
+                <svg
+                    width="21"
+                    height="21"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <circle cx="12" cy="8" r="4"></circle>
+                    <path d="M5 21a7 7 0 0 1 14 0"></path>
+                </svg>
+
+                <span>Đăng nhập / Đăng ký</span>
+            </a>
+
+        </div>
+    </div>
+</header>
+
+<!-- ========================================
+     SCENTIE ANNOUNCEMENT BAR
+     ======================================== -->
+
+<div class="announcement-bar" aria-label="Thông điệp thương hiệu">
+
+    <div class="announcement-track">
+
+        <div class="announcement-group" aria-hidden="true">
+            <span class="star">✦</span>
+            <span>ƯU ĐÃI MÙA ĐÔNG!</span>
+
+            <span class="star">✦</span>
+            <span>SALE OFF 30%</span>
+
+            <span class="star">✦</span>
+            <span>CHỈ TỪ 69.000 VNĐ</span>
+
+            <span class="star">✦</span>
+            <span>MUA NGAY, KẺO LỠ!!!</span>
+        </div>
+
+        <div class="announcement-group" aria-hidden="true">
+            <span class="star">✦</span>
+            <span>ƯU ĐÃI MÙA ĐÔNG!</span>
+
+            <span class="star">✦</span>
+            <span>SALE OFF 30%</span>
+
+            <span class="star">✦</span>
+            <span>CHỈ TỪ 69.000 VNĐ</span>
+
+            <span class="star">✦</span>
+            <span>MUA NGAY, KẺO LỠ!!!</span>
+        </div>
+
+    </div>
+</div>
+
+    <main>
+        <!-- ĐIỀU HƯỚNG PHÂN CẤP -->
+        <div class="product-breadcrumb">
+            <a href="../index.html">Trang chủ</a>
+            <span>/</span>
+            <a href="shop.html">Sản phẩm</a>
+            <span>/</span>
+            <span id="breadcrumbProduct">Sản phẩm</span>
+        </div>
+
+        <!-- KHU VỰC SẢN PHẨM CHÍNH -->
+        <section class="pd-hero" id="productDetailRoot">
+            <div class="pd-hero-noise"></div>
+
+            <div class="pd-hero-topline">
+                <span>SCENTIE / VẬT THỂ TÂM TRẠNG Nº <span id="heroNumber">01</span></span>
+                <span class="pd-live-indicator"><i></i> TÂM TRẠNG CỦA BẠN ĐANG HIỆN DIỆN</span>
+            </div>
+
+            <div class="pd-hero-grid">
+                <!-- HÌNH ẢNH SẢN PHẨM -->
+                <div class="pd-visual">
+                    <div class="pd-visual-orbit orbit-one"></div>
+                    <div class="pd-visual-orbit orbit-two"></div>
+                    <div class="pd-visual-orbit orbit-three"></div>
+
+                    <span class="pd-visual-sticker sticker-top">CẢM<br>NHẬN<br>CHẤT RIÊNG ✳</span>
+                    <span class="pd-visual-sticker sticker-bottom">TẠO RA ĐỂ<br>ĐỒNG HÀNH CÙNG BẠN</span>
+
+                    <div class="pd-visual-cross cross-one">✳</div>
+                    <div class="pd-visual-cross cross-two">+</div>
+                    <div class="pd-visual-cross cross-three">✳</div>
+
+                    <div class="pd-main-product">
+                        <div class="pd-product-shadow"></div>
+                        <img id="productMainImage" src="" alt="Miếng dán hương thơm SCENTIE">
+                    </div>
+
+                    <div class="pd-visual-caption">
+
+                    </div>
+
+                    <div class="pd-thumbnails" id="productThumbnails"></div>
+                </div>
+
+                <!-- THÔNG TIN SẢN PHẨM -->
+                <div class="pd-info">
+                    <div class="pd-info-eyebrow">
+                        <span class="pd-eyebrow-dot"></span>
+                        <span id="productCategory">BỘ SƯU TẬP TÂM TRẠNG ĐƠN</span>
+                    </div>
+
+                    <p class="pd-overline" id="productTagline">MỘT CHÚT GÌ ĐÓ DÀNH RIÊNG CHO TÂM TRẠNG CỦA BẠN</p>
+
+                    <h1 class="pd-product-title" id="productName">
+                        <span>TÂM</span>
+                        <strong>TRẠNG.</strong>
+                    </h1>
+
+                    <div class="pd-title-decoration" aria-hidden="true">
+                        <span></span><span></span><span></span>
+                    </div>
+
+                    <p class="pd-description" id="productDescription"></p>
+
+                    <div class="pd-price-area" id="productPriceWrapper">
+                        <div class="pd-price-line">
+                            <strong id="productPrice"></strong>
+                            <del id="productOriginalPrice"></del>
+                            <span class="pd-discount" id="productDiscount"></span>
+                        </div>
+                        <span class="pd-price-caption">MANG THEO TÂM TRẠNG CỦA BẠN MỖI NGÀY.</span>
+                    </div>
+
+                    <div class="pd-specs">
+                        <div class="pd-spec">
+                            <span class="pd-spec-icon">✳</span>
+                            <div>
+                                <strong id="productPatchCount">05 MIẾNG DÁN</strong>
+                                <small>TRONG MỖI HỘP</small>
+                            </div>
+                        </div>
+                        <div class="pd-spec">
+                            <span class="pd-spec-icon">◉</span>
+                            <div>
+                                <strong id="productCollection">PHIÊN BẢN CÓ THỂ MANG THEO</strong>
+                                <small>MIẾNG DÁN HƯƠNG THƠM</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pd-moods-wrap">
+                        <span class="pd-field-label">TỔ HỢP TÂM TRẠNG CỦA BẠN</span>
+                        <div class="pd-mood-chips" id="productMoods"></div>
+                    </div>
+
+                    <div class="pd-purchase">
+                        <div class="pd-quantity">
+                            <button type="button" id="quantityDecrease" aria-label="Giảm số lượng">−</button>
+                            <input type="number" id="productQuantity" value="1" min="1" max="99" inputmode="numeric">
+                            <button type="button" id="quantityIncrease" aria-label="Tăng số lượng">+</button>
+                        </div>
+
+                        <button type="button" class="pd-add-cart" id="addToCartBtn">
+                            <span>THÊM VÀO GIỎ HÀNG</span>
+                            <span class="pd-button-arrow">↗</span>
+                        </button>
+                    </div>
+
+                    <button type="button" class="pd-buy-now" id="buyNowBtn">
+                        SỞ HỮU TÂM TRẠNG CỦA BẠN NGAY <span>→</span>
+                    </button>
+
+                    <p class="pd-note">✳ Miếng dán hương thơm dành cho quần áo và phụ kiện.</p>
+                </div>
+            </div>
+
+            <div class="pd-hero-bottom">
+                <span>SCENTIE — MANG THEO TÂM TRẠNG</span>
+                <span>CUỘN XUỐNG ĐỂ KHÁM PHÁ ↓</span>
+                <span>THÀNH LẬP 2026</span>
+            </div>
+        </section>
+
+        <!-- VŨ TRỤ TÂM TRẠNG -->
+        <section class="pd-universe" id="moodUniverse">
+            <div class="pd-section-kicker">
+            </div>
+
+            <div class="pd-universe-heading">
+                <p>KHÔNG CHỈ LÀ HƯƠNG THƠM.</p>
+                <h2>MÀ LÀ CẢ MỘT<br><em>TÂM TRẠNG.</em></h2>
+                <span class="pd-heading-spark">✳</span>
+            </div>
+
+            <div class="pd-universe-stage">
+                <div class="pd-universe-grid"></div>
+                <div class="pd-universe-ring ring-a"></div>
+                <div class="pd-universe-ring ring-b"></div>
+
+                <div class="pd-universe-orb orb-a"></div>
+                <div class="pd-universe-orb orb-b"></div>
+                <div class="pd-universe-orb orb-c"></div>
+                <div class="pd-universe-orb orb-d"></div>
+
+                <div class="pd-universe-center">
+                    <span class="pd-universe-small">TÂM TRẠNG HIỆN TẠI</span>
+                    <strong id="universeMood">CALM</strong>
+                    <span class="pd-universe-symbol">✳</span>
+                </div>
+
+                <span class="pd-universe-coordinate coordinate-a">10°46' N</span>
+                <span class="pd-universe-coordinate coordinate-b">TẦN SỐ CỦA RIÊNG BẠN</span>
+                <span class="pd-universe-coordinate coordinate-c">TÍN HIỆU TÂM TRẠNG: ĐANG HOẠT ĐỘNG</span>
+            </div>
+
+            <div class="pd-universe-copy">
+                <div class="pd-universe-copy-mark">✳</div>
+                <p id="productStory">
+                    Tâm trạng của bạn, khoảnh khắc của bạn, cách riêng của bạn để thể hiện chính mình.
+                </p>
+                <span>THỂ HIỆN ĐIỀU LỜI NÓI KHÔNG THỂ DIỄN TẢ.</span>
+            </div>
+        </section>
+
+        <!-- BÊN TRONG HỘP SẢN PHẨM -->
+        <section class="pd-inside" id="productInside">
+            <div class="pd-section-kicker">
+            </div>
+
+            <div class="pd-inside-heading">
+                <div>
+                    <p>ĐIỀU TUYỆT VỜI ĐÔI KHI NẰM TRONG</p>
+                    <h2>NHỮNG<br><em>GÓI NHỎ.</em></h2>
+                </div>
+                <span class="pd-inside-stamp">MỞ<br>RA NÀO ✳</span>
+            </div>
+
+            <div class="pd-inside-grid">
+                <article class="pd-inside-card inside-card-one">
+                    <span class="pd-card-index">01</span>
+                    <div class="pd-inside-graphic graphic-patch">
+                        <span class="patch-shape"></span>
+                        <span class="patch-spark">✳</span>
+                    </div>
+                    <div>
+                        <span class="pd-card-label">ĐIỀU CỐT YẾU</span>
+                        <h3>MIẾNG DÁN<br>HƯƠNG THƠM</h3>
+                        <p id="insidePatchText">Một hộp miếng dán hương thơm giúp bạn mang theo tâm trạng đã chọn bên mình.</p>
+                    </div>
+                    <span class="pd-card-foot">DÀNH CHO MỌI KHOẢNH KHẮC THƯỜNG NGÀY</span>
+                </article>
+
+                <article class="pd-inside-card inside-card-two">
+                    <span class="pd-card-index">02</span>
+                    <div class="pd-inside-graphic graphic-box">
+                        <span class="box-shape">S</span>
+                        <span class="box-orbit"></span>
+                    </div>
+                    <div>
+                        <span class="pd-card-label">BAO BÌ SẢN PHẨM</span>
+                        <h3>TÂM TRẠNG<br>TRONG MỘT CHIẾC HỘP</h3>
+                        <p>Thiết kế hộp nhỏ gọn, giúp bạn mang theo tâm trạng của mình đến bất cứ đâu.</p>
+                    </div>
+                    <span class="pd-card-foot">SCENTIE / PHIÊN BẢN CÓ THỂ MANG THEO</span>
+                </article>
+
+                <article class="pd-inside-card inside-card-three">
+                    <span class="pd-card-index">03</span>
+                    <div class="pd-inside-graphic graphic-star">
+                        <span>✳</span><i>+</i><b>✦</b>
+                    </div>
+                    <div>
+                        <span class="pd-card-label">TRẢI NGHIỆM CỦA BẠN</span>
+                        <h3>CHẤT RIÊNG<br>CỦA BẠN</h3>
+                        <p>Chọn một tâm trạng, biến nó thành dấu ấn riêng và thể hiện theo cách của chính bạn.</p>
+                    </div>
+                    <span class="pd-card-foot">MANG THEO TÂM TRẠNG</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- HƯỚNG DẪN SỬ DỤNG -->
+        <section class="pd-howto" id="productHowTo">
+            <div class="pd-section-kicker">
+            </div>
+
+            <div class="pd-howto-heading">
+                <h2>BÓC.<br><em>DÁN.</em><br>THỂ HIỆN.</h2>
+                <div class="pd-howto-side">
+                    <span class="pd-howto-star">✳</span>
+                    <p>Tâm trạng là điều thuộc về bạn. Hãy khiến mỗi khoảnh khắc nhỏ trở nên đậm chất riêng hơn.</p>
+                </div>
+            </div>
+
+            <div class="pd-steps">
+                <article class="pd-step">
+                    <div class="pd-step-visual step-visual-one">
+                        <span class="step-number">01</span>
+                        <div class="step-sticker">✳</div>
+                        <span class="step-line"></span>
+                    </div>
+                    <h3>BÓC MIẾNG DÁN</h3>
+                    <p>Nhẹ nhàng bóc miếng dán hương thơm khỏi lớp đế bảo vệ.</p>
+                </article>
+
+                <article class="pd-step">
+                    <div class="pd-step-visual step-visual-two">
+                        <span class="step-number">02</span>
+                        <div class="step-shirt">T</div>
+                        <span class="step-spark">✦</span>
+                    </div>
+                    <h3>DÁN LÊN</h3>
+                    <p>Dán miếng hương thơm lên quần áo hoặc phụ kiện yêu thích của bạn.</p>
+                </article>
+
+                <article class="pd-step">
+                    <div class="pd-step-visual step-visual-three">
+                        <span class="step-number">03</span>
+                        <div class="step-heart">♡</div>
+                        <span class="step-spark">✳</span>
+                    </div>
+                    <h3>THỂ HIỆN CHẤT RIÊNG</h3>
+                    <p>Mang theo tâm trạng và tự tin thể hiện cá tính của chính mình.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SẢN PHẨM LIÊN QUAN -->
+        <section class="pd-related">
+            <div class="pd-section-kicker">
+            </div>
+
+            <div class="pd-related-heading">
+                <h2>TÂM TRẠNG<br><em>TIẾP THEO</em> CỦA BẠN LÀ GÌ?</h2>
+                <a href="shop.html">KHÁM PHÁ TẤT CẢ TÂM TRẠNG ↗</a>
+            </div>
+
+            <div class="pd-related-grid" id="relatedProductsGrid"></div>
+        </section>
+
+        <!-- KHÔNG TÌM THẤY SẢN PHẨM -->
+        <section class="pd-not-found" id="productNotFound" hidden>
+            <span>ỐI! ✳</span>
+            <h1>KHÔNG TÌM THẤY TÂM TRẠNG NÀY.</h1>
+            <p>Sản phẩm này hiện chưa có trong bộ sưu tập.</p>
+            <a href="shop.html">KHÁM PHÁ SẢN PHẨM →</a>
+        </section>
+    </main>
+
+    <!-- CỬA SỔ THÔNG BÁO THÊM VÀO GIỎ HÀNG -->
+    <div class="pd-cart-overlay" id="cartSuccessOverlay" aria-hidden="true">
+        <div class="pd-cart-modal" role="dialog" aria-modal="true" aria-labelledby="cartSuccessTitle">
+            <button type="button" class="pd-modal-close" id="cartSuccessClose" aria-label="Đóng">×</button>
+            <div class="pd-modal-spark">✳</div>
+            <span class="pd-modal-eyebrow">MỘT TÂM TRẠNG NHỎ VỪA ĐƯỢC THÊM VÀO!</span>
+            <h2>ĐÃ NẰM TRONG<br>GIỎ HÀNG CỦA BẠN.</h2>
+            <p id="cartSuccessProduct">Tâm trạng của bạn đã sẵn sàng đồng hành cùng bạn.</p>
+            <div class="pd-modal-actions">
+                <button type="button" id="continueShoppingBtn">TIẾP TỤC KHÁM PHÁ</button>
+                <a href="cart.html">XEM GIỎ HÀNG ↗</a>
+            </div>
+        </div>
+    </div>
+
+ <!-- ========================================
+     SCENTIE FOOTER - HOMEPAGE VERSION
+     ======================================== -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <a href="../index.html" class="footer-logo">
+                    <img
+                        src="../assets/images/logo/logo-scentie-trang.png"
+                        alt="SCENTIE"
+                    >
+                </a>
+
+                <p>
+                    Wear your mood.<br>
+                    Mang theo mood của bạn, ở bất cứ đâu.
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>KHÁM PHÁ</h3>
+
+                <a href="shop.html">Sản phẩm</a>
+                <a href="collections.html">Bộ sưu tập</a>
+                <a href="about.html">Về SCENTIE</a>
+                <a href="find-your-mood.html">Tìm mood</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>HỖ TRỢ</h3>
+
+                <a href="faq.html">Câu hỏi thường gặp</a>
+                <a href="faq.html">Hướng dẫn sử dụng</a>
+                <a href="faq.html">Chính sách mua hàng</a>
+                <a href="faq.html">Liên hệ</a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 SCENTIE. ALL RIGHTS RESERVED.
+        </div>
+
+    </div>
+
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase-client.js"></script>
+<script src="../js/account-header.js"></script>
+<script src="../js/main.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/cart-sync.js"></script>
+    <script src="../js/product-detail.js"></script>
+</body>
+</html>

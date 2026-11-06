@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff0f6">
+
+    <title>Giỏ hàng — SCENTIE</title>
+    <meta name="description" content="Giỏ hàng SCENTIE — hoàn thiện lựa chọn tâm trạng của bạn.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/site-transition.css">
+
+    <!-- Cart CSS -->
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/account-header.css">
+</head>
+
+<body class="cart-page">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <button class="header-icon mobile-menu-btn"
+                    id="mobileMenuBtn"
+                    aria-label="Mở menu"
+                    aria-expanded="false">
+                ☰
+            </button>
+
+            <a href="../index.html" class="brand-logo">
+                <img src="../assets/images/logo/logo-scentie-den.png"
+                     alt="SCENTIE Logo">
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <a href="../index.html">TRANG CHỦ</a>
+                <a href="shop.html">SẢN PHẨM</a>
+                <a href="about.html">VỀ SCENTIE</a>
+                <a href="find-your-mood.html">TÌM MOOD</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <!-- SEARCH BUTTON -->
+                <button type="button"
+                        class="header-search-btn"
+                        id="searchOpenBtn"
+                        aria-label="Mở tìm kiếm"
+                        aria-controls="searchOverlay"
+                        aria-expanded="false">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="19"
+                         height="19"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.8"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="m20 20-4-4"></path>
+                    </svg>
+
+                    <span>Tìm kiếm mood của bạn...</span>
+                </button>
+
+                <!-- CART BUTTON -->
+                <a href="cart.html"
+                   class="header-cart"
+                   aria-label="Giỏ hàng">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="22"
+                         height="22"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.7"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                </a>
+
+                <!-- ACCOUNT BUTTON -->
+                <a href="account.html"
+                   class="header-account"
+                   aria-label="Đăng nhập hoặc đăng ký">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="21"
+                         height="21"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.7"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M5 21v-2a7 7 0 0 1 14 0v2"></path>
+                    </svg>
+
+                    <span>Đăng nhập / Đăng ký</span>
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay"
+     id="searchOverlay"
+     aria-hidden="true">
+
+    <div class="search-panel">
+
+        <button type="button"
+                class="search-close"
+                id="searchCloseBtn"
+                aria-label="Đóng tìm kiếm">
+            &times;
+        </button>
+
+        <p class="search-label">
+            SCENTIE SEARCH ✦
+        </p>
+
+        <h2>
+            Bạn đang tìm kiếm sản phẩm nào?
+        </h2>
+
+        <form class="search-form" id="searchForm">
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Nhập tên sản phẩm, mùi hương..."
+                autocomplete="off"
+                aria-label="Nhập từ khóa tìm kiếm"
+            >
+
+            <button type="submit"
+                    class="search-submit"
+                    aria-label="Tìm kiếm">
+                ⌕
+            </button>
+
+        </form>
+
+        
+        <div class="search-suggestions">
+            <p>GỢI Ý TÌM KIẾM</p>
+
+            <div class="search-tags">
+                <button type="button" data-mood="focus">Focus</button>
+                <button type="button" data-mood="energy">Energy</button>
+                <button type="button" data-mood="calm">Calm</button>
+                <button type="button" data-mood="date">Date</button>
+                <button type="button" data-mood="fun">Fun</button>
+            </div>
+        </div>
+
+        <!-- LIVE SEARCH RESULTS -->
+        <div class="search-live-results" id="searchLiveResults">
+            <!-- Search suggestions will appear here -->
+        </div>
+    </div>
+
+</div>
+
+    <!-- JAVASCRIPT -->
+
+<main class="cart-main">
+
+        <!-- BREADCRUMB -->
+        <div class="container cart-breadcrumb">
+            <a href="../index.html">Trang chủ</a>
+            <span>/</span>
+            <span>Giỏ hàng</span>
+        </div>
+
+        <!-- CART HERO -->
+        <section class="cart-heading container">
+
+            <div class="cart-heading-copy">
+                <span class="cart-eyebrow">
+                    YOUR LITTLE MOOD COLLECTION
+                </span>
+
+                <h1>
+                    Một chút tâm trạng,<br>
+                    <span>đang chờ bạn.</span>
+                </h1>
+
+                <p>
+                    Những lựa chọn nhỏ của bạn đã ở đây.
+                    Cùng kiểm tra lại trước khi mang chúng về nhé!
+                </p>
+            </div>
+
+            <div class="cart-heading-decoration" aria-hidden="true">
+                <span class="cart-orb cart-orb-one"></span>
+                <span class="cart-orb cart-orb-two"></span>
+                <span class="cart-orb cart-orb-three"></span>
+                <span class="cart-decoration-ring cart-ring-one"></span>
+                <span class="cart-decoration-ring cart-ring-two"></span>
+                <div class="cart-product-stage">
+                    <img class="cart-hero-product cart-hero-calm" src="../assets/images/mockups/mockup-calm.png" alt="">
+                    <img class="cart-hero-product cart-hero-focus" src="../assets/images/mockups/mockup-focus.png" alt="">
+                    <img class="cart-hero-product cart-hero-energy" src="../assets/images/mockups/mockup-energy.png" alt="">
+                </div>
+                <span class="cart-decoration-text">MOOD<br>ON.</span>
+                <span class="cart-stage-caption">YOUR MOOD UNIVERSE <i>✦</i></span>
+            </div>
+
+        </section>
+
+        <!-- EMPTY CART -->
+        <section class="cart-empty container" id="cartEmpty" hidden>
+
+            <div class="empty-illustration">
+                <div class="empty-orbit empty-orbit-one"></div>
+                <div class="empty-orbit empty-orbit-two"></div>
+
+                <div class="empty-bag">
+                    <svg viewBox="0 0 100 100" fill="none">
+                        <path d="M22 35h56l-5 51H27l-5-51Z"
+                              stroke="currentColor" stroke-width="2.5"
+                              stroke-linejoin="round"/>
+                        <path d="M37 36V25a13 13 0 0 1 26 0v11"
+                              stroke="currentColor" stroke-width="2.5"
+                              stroke-linecap="round"/>
+                        <path d="M39 59c5 5 17 5 22 0"
+                              stroke="currentColor" stroke-width="2"
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+
+                <span class="empty-sparkle sparkle-one">✳</span>
+                <span class="empty-sparkle sparkle-two">✦</span>
+                <span class="empty-sparkle sparkle-three">✧</span>
+            </div>
+
+            <span class="cart-eyebrow">A LITTLE SPACE FOR NEW MOODS</span>
+
+            <h2>Giỏ hàng đang trống.</h2>
+
+            <p>
+                Có vẻ như bạn vẫn chưa chọn được tâm trạng nào.
+                Khám phá một chút nhé!
+            </p>
+
+            <a href="shop.html" class="cart-primary-btn">
+                Khám phá sản phẩm <span>↗</span>
+            </a>
+
+        </section>
+
+        <!-- CART CONTENT -->
+        <section class="cart-content container" id="cartContent" hidden>
+
+            <div class="cart-layout">
+
+                <!-- PRODUCT LIST -->
+                <div class="cart-products-column">
+
+                    <div class="cart-list-heading">
+                        <div>
+                            <span class="cart-eyebrow">YOUR SELECTION</span>
+                            <h2>Sản phẩm của bạn</h2>
+                        </div>
+
+                        <span id="cartItemCount">0 sản phẩm</span>
+                    </div>
+
+                    <div class="cart-items" id="cartItems">
+                        <!-- Rendered by cart.js -->
+                    </div>
+
+                    <a href="shop.html" class="cart-continue">
+                        <span>←</span> Tiếp tục khám phá
+                    </a>
+
+                </div>
+
+                <!-- ORDER SUMMARY -->
+                <aside class="cart-summary">
+
+                    <div class="summary-top">
+                        <span class="cart-eyebrow">ORDER OVERVIEW</span>
+                        <h2>Tóm tắt đơn hàng</h2>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Tạm tính</span>
+                        <strong id="cartSubtotal">0đ</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Phí vận chuyển</span>
+                        <span class="summary-note">Tính khi thanh toán</span>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-row summary-total">
+                        <span>Tổng cộng</span>
+                        <strong id="cartTotal">0đ</strong>
+                    </div>
+
+                    <p class="summary-tax-note">
+                        Phí vận chuyển sẽ được xác nhận ở bước tiếp theo.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="cart-checkout-btn"
+                        id="checkoutBtn"
+                        disabled
+                    >
+                        Tiến hành thanh toán <span>↗</span>
+                    </button>
+
+                    <div class="summary-security">
+                        <span>✧</span>
+                        <p>Một trải nghiệm mua sắm nhỏ xinh dành riêng cho bạn.</p>
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+        <!-- TRUST SECTION -->
+        <section class="cart-trust container">
+
+            <div class="trust-item">
+                <span class="trust-icon">✧</span>
+                <div>
+                    <strong>Nhỏ gọn & tiện lợi</strong>
+                    <p>Dễ dàng mang theo mỗi ngày.</p>
+                </div>
+            </div>
+
+            <div class="trust-item">
+                <span class="trust-icon">♡</span>
+                <div>
+                    <strong>Chọn mood của riêng bạn</strong>
+                    <p>Mỗi tâm trạng là một phiên bản khác nhau.</p>
+                </div>
+            </div>
+
+            <div class="trust-item">
+                <span class="trust-icon">✳</span>
+                <div>
+                    <strong>Đồng hành cùng bạn</strong>
+                    <p>Mang theo một chút cảm hứng mỗi ngày.</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-main">
+
+                <div class="footer-brand">
+
+                    <a href="../index.html" class="footer-logo">
+                        <img src="../assets/images/logo/logo-scentie-trang.png"
+                             alt="SCENTIE Logo">
+                    </a>
+
+                    <p>
+                        Wear your mood.<br>
+                        Mang theo mood của bạn, ở bất cứ đâu.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>KHÁM PHÁ</h3>
+
+                    <a href="shop.html">Sản phẩm</a>
+                    <a href="collections.html">Bộ sưu tập</a>
+                    <a href="about.html">Về SCENTIE</a>
+                    <a href="find-your-mood.html">Tìm mood</a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>HỖ TRỢ</h3>
+
+                    <a href="faq.html">Câu hỏi thường gặp</a>
+                    <a href="faq.html">Hướng dẫn sử dụng</a>
+                    <a href="faq.html">Chính sách mua hàng</a>
+                    <a href="faq.html">Liên hệ</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+                © 2026 SCENTIE. ALL RIGHTS RESERVED.
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase-client.js"></script>
+<script src="../js/account-header.js"></script>
+<script src="../js/main.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/cart-sync.js"></script>
+
+</body>
+</html>
