@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#edf5e9">
+    <title>Tìm Mood — Khám phá mùi hương của bạn | SCENTIE</title>
+    <meta name="description" content="Trả lời 5 câu hỏi để khám phá mood của bạn và tìm ra mùi hương phù hợp cùng SCENTIE.">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/site-transition.css">
+    <link rel="stylesheet" href="../css/account-header.css">
+    <link rel="stylesheet" href="../css/find-your-mood.css">
+</head>
+
+<body class="find-mood-page">
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <button class="header-icon mobile-menu-btn"
+                    id="mobileMenuBtn"
+                    aria-label="Mở menu"
+                    aria-expanded="false">
+                ☰
+            </button>
+
+            <a href="../index.html" class="brand-logo">
+                <img src="../assets/images/logo/logo-scentie-den.png"
+                     alt="SCENTIE Logo">
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <a href="../index.html">TRANG CHỦ</a>
+                <a href="shop.html">SẢN PHẨM</a>
+                <a href="about.html">VỀ SCENTIE</a>
+                <a href="find-your-mood.html" class="active" aria-current="page">TÌM MOOD</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <!-- SEARCH BUTTON -->
+                <button type="button"
+                        class="header-search-btn"
+                        id="searchOpenBtn"
+                        aria-label="Mở tìm kiếm"
+                        aria-controls="searchOverlay"
+                        aria-expanded="false">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="19"
+                         height="19"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.8"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="m20 20-4-4"></path>
+                    </svg>
+
+                    <span>Tìm kiếm mood của bạn...</span>
+                </button>
+
+                <!-- CART BUTTON -->
+                <a href="cart.html"
+                   class="header-cart"
+                   aria-label="Giỏ hàng">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="22"
+                         height="22"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.7"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                </a>
+
+                <!-- ACCOUNT BUTTON -->
+                <a href="account.html"
+                   class="header-account"
+                   aria-label="Đăng nhập hoặc đăng ký">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="21"
+                         height="21"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.7"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M5 21v-2a7 7 0 0 1 14 0v2"></path>
+                    </svg>
+
+                    <span>Đăng nhập / Đăng ký</span>
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="mood-hero" id="moodTop">
+            <div class="mood-hero__glow mood-hero__glow--one"></div>
+            <div class="mood-hero__glow mood-hero__glow--two"></div>
+            <div class="mood-hero__inner">
+                <div class="mood-hero__copy">
+                    <span class="mood-eyebrow"><span class="eyebrow-dot"></span> MỘT CHÚT THẤU HIỂU · MỘT CHÚT HƯƠNG THƠM</span>
+                    <h1>HÔM NAY,<br>BẠN ĐANG Ở<br><em>TÂM TRẠNG NÀO?</em></h1>
+                    <p>Mỗi ngày là một phiên bản khác nhau của chính bạn. Hãy cùng SCENTIE khám phá mood và tìm ra mùi hương dành riêng cho bạn.</p>
+                    <div class="mood-hero__actions">
+                        <a class="mood-button mood-button--dark" href="#moodQuiz">BẮT ĐẦU KHÁM PHÁ <span>↗</span></a>
+                        <span class="mood-hero__note">✦ Chỉ mất khoảng 2 phút</span>
+                    </div>
+                </div>
+
+                <div class="mood-hero__art" aria-label="Năm mood đặc trưng của SCENTIE">
+                    <div class="art-orbit art-orbit--outer"></div>
+                    <div class="art-orbit art-orbit--inner"></div>
+                    <div class="art-glass art-glass--large"></div>
+                    <div class="art-glass art-glass--small"></div>
+                    <div class="art-spark art-spark--one">✳</div>
+                    <div class="art-spark art-spark--two">✦</div>
+                    <div class="art-label art-label--top">YOUR MOOD<br>YOUR MOMENT</div>
+                    <div class="art-label art-label--bottom">SCENTIE · 2026</div>
+                    <div class="art-mood art-mood--focus">FOCUS</div>
+                    <div class="art-mood art-mood--energy">ENERGY</div>
+                    <div class="art-mood art-mood--calm">CALM</div>
+                    <div class="art-mood art-mood--date">DATE</div>
+                    <div class="art-mood art-mood--fun">FUN</div>
+                    <div class="art-center">
+                        <span class="art-center__halo"></span>
+                        <span class="art-center__word">mood<span>.</span></span>
+                        <span class="art-center__caption">FIND YOUR OWN RHYTHM</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mood-hero__bottom"><span>CUỘN ĐỂ KHÁM PHÁ</span><span class="scroll-line"></span><span>01 — 05 MOODS</span></div>
+        </section>
+
+        <section class="mood-playground" id="moodPlayground">
+            <div class="mood-section-heading">
+                <span class="mood-eyebrow">MỖI MOOD, MỘT SẮC THÁI RIÊNG</span>
+                <h2>NĂM SẮC THÁI.<br><em>MUÔN CÁCH LÀ BẠN.</em></h2>
+                <p>Khám phá những phiên bản khác nhau có thể đang hiện diện bên trong bạn.</p>
+            </div>
+
+            <div class="mood-card-grid">
+                <article class="mood-card mood-card--focus" data-card-mood="focus" tabindex="0">
+                    <div class="mood-card__top"><span>01 / THE THINKER</span><span>↗</span></div>
+                    <div class="mood-card__visual"><img src="../assets/images/mockups/mockup-focus.png" alt="Hình ảnh mood Focus" loading="lazy"><span class="mood-card__orb"></span></div>
+                    <div class="mood-card__bottom"><div><h3>FOCUS</h3><p>Tập trung · Quyết đoán</p></div><span class="mood-card__symbol">✳</span></div>
+                </article>
+                <article class="mood-card mood-card--energy" data-card-mood="energy" tabindex="0">
+                    <div class="mood-card__top"><span>02 / THE SPARK</span><span>↗</span></div>
+                    <div class="mood-card__visual"><img src="../assets/images/mockups/mockup-energy.png" alt="Hình ảnh mood Energy" loading="lazy"><span class="mood-card__orb"></span></div>
+                    <div class="mood-card__bottom"><div><h3>ENERGY</h3><p>Năng động · Tích cực</p></div><span class="mood-card__symbol">✴</span></div>
+                </article>
+                <article class="mood-card mood-card--calm" data-card-mood="calm" tabindex="0">
+                    <div class="mood-card__top"><span>03 / THE DREAMER</span><span>↗</span></div>
+                    <div class="mood-card__visual"><img src="../assets/images/mockups/mockup-calm.png" alt="Hình ảnh mood Calm" loading="lazy"><span class="mood-card__orb"></span></div>
+                    <div class="mood-card__bottom"><div><h3>CALM</h3><p>Bình yên · Thư thái</p></div><span class="mood-card__symbol">☼</span></div>
+                </article>
+                <article class="mood-card mood-card--date" data-card-mood="date" tabindex="0">
+                    <div class="mood-card__top"><span>04 / THE ROMANTIC</span><span>↗</span></div>
+                    <div class="mood-card__visual"><img src="../assets/images/mockups/mockup-date.png" alt="Hình ảnh mood Date" loading="lazy"><span class="mood-card__orb"></span></div>
+                    <div class="mood-card__bottom"><div><h3>DATE</h3><p>Dịu dàng · Cuốn hút</p></div><span class="mood-card__symbol">♡</span></div>
+                </article>
+                <article class="mood-card mood-card--fun" data-card-mood="fun" tabindex="0">
+                    <div class="mood-card__top"><span>05 / THE FREE SPIRIT</span><span>↗</span></div>
+                    <div class="mood-card__visual"><img src="../assets/images/mockups/mockup-fun.png" alt="Hình ảnh mood Fun" loading="lazy"><span class="mood-card__orb"></span></div>
+                    <div class="mood-card__bottom"><div><h3>FUN</h3><p>Tự do · Ngẫu hứng</p></div><span class="mood-card__symbol">✳</span></div>
+                </article>
+            </div>
+            <p class="mood-playground__hint"><span>✦</span> Di chuyển chuột qua từng mood để cảm nhận sắc thái riêng.</p>
+        </section>
+
+        <section class="mood-quiz" id="moodQuiz">
+            <div class="quiz-background-shape quiz-background-shape--one"></div>
+            <div class="quiz-background-shape quiz-background-shape--two"></div>
+            <div class="quiz-shell">
+                <div class="quiz-intro" id="quizIntro">
+                    <span class="mood-eyebrow">HÀNH TRÌNH KHÁM PHÁ BẮT ĐẦU TỪ ĐÂY</span>
+                    <h2>HÃY ĐỂ CẢM XÚC<br><em>DẪN LỐI.</em></h2>
+                    <p>5 câu hỏi nhỏ, một kết quả dành riêng cho bạn. Không có đúng hay sai — hãy chọn điều gần với bạn nhất lúc này.</p>
+                    <button class="mood-button mood-button--dark" id="quizStartBtn" type="button">BẮT ĐẦU TRẢ LỜI <span>→</span></button>
+                    <div class="quiz-intro__meta"><span>✦ 05 CÂU HỎI</span><span>✦ KHOẢNG 02 PHÚT</span><span>✦ DÀNH RIÊNG CHO BẠN</span></div>
+                </div>
+
+                <div class="quiz-panel" id="quizPanel" hidden>
+                    <div class="quiz-progress-row">
+                        <span id="quizStepLabel">CÂU HỎI 01 / 05</span>
+                        <span id="quizPercent">20%</span>
+                    </div>
+                    <div class="quiz-progress"><span id="quizProgressFill"></span></div>
+                    <div class="quiz-question-wrap" id="quizQuestionWrap">
+                        <span class="quiz-question-kicker" id="quizQuestionKicker">ĐIỀU GÌ KHIẾN BẠN CẢM THẤY LÀ CHÍNH MÌNH?</span>
+                        <h3 id="quizQuestion">Khi có một ngày hoàn toàn dành cho bản thân, bạn muốn tận hưởng nó như thế nào?</h3>
+                        <p id="quizQuestionHint">Hãy chọn câu trả lời gần với bạn nhất.</p>
+                        <div class="quiz-options" id="quizOptions"></div>
+                    </div>
+                    <div class="quiz-controls">
+                        <button type="button" class="quiz-back" id="quizBackBtn" disabled>← CÂU TRƯỚC</button>
+                        <span class="quiz-controls__note">Bạn có thể thay đổi lựa chọn trước khi hoàn tất.</span>
+                        <button type="button" class="quiz-next" id="quizNextBtn" disabled>TIẾP THEO <span>→</span></button>
+                    </div>
+                </div>
+
+                <div class="quiz-result" id="quizResult" hidden aria-live="polite">
+                    <div class="quiz-result__visual">
+                        <div class="result-orbit result-orbit--one"></div><div class="result-orbit result-orbit--two"></div>
+                        <img id="resultMoodImage" src="../assets/images/mockups/mockup-calm.png" alt="Sản phẩm mood gợi ý">
+                        <span class="result-confetti result-confetti--one">✳</span><span class="result-confetti result-confetti--two">✦</span>
+                    </div>
+                    <div class="quiz-result__copy">
+                        <span class="mood-eyebrow">SCENTIE ĐÃ TÌM THẤY SẮC THÁI CỦA BẠN</span>
+                        <p class="quiz-result__pretitle">MOOD PHÙ HỢP NHẤT VỚI BẠN LÀ</p>
+                        <h3 id="resultMoodName">CALM<span>.</span></h3>
+                        <p id="resultMoodDescription"></p>
+                        <div class="result-product" id="resultProduct">
+                            <span class="result-product__label">MÙI HƯƠNG DÀNH CHO BẠN</span>
+                            <div class="result-product__details">
+                                <div><strong id="resultProductName">Calm</strong><span id="resultProductDescription"></span></div>
+                                <strong id="resultProductPrice">69.000đ</strong>
+                            </div>
+                        </div>
+                        <div class="quiz-result__actions">
+                            <a class="mood-button mood-button--dark" id="resultProductLink" href="product-detail.html?mood=calm">KHÁM PHÁ SẢN PHẨM <span>↗</span></a>
+                            <button class="mood-button mood-button--light" id="quizRetakeBtn" type="button">LÀM LẠI BÀI KHÁM PHÁ</button>
+                        </div>
+                        <p class="quiz-result__footnote">Mood là cách bạn cảm nhận hôm nay — và bạn luôn có thể là một phiên bản khác vào ngày mai.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mood-closing">
+            <div class="closing-orb closing-orb--one"></div><div class="closing-orb closing-orb--two"></div>
+            <span class="mood-eyebrow">YOUR MOOD, YOUR MOMENT</span>
+            <h2>BẠN CÓ THỂ LÀ<br><em>RẤT NHIỀU PHIÊN BẢN.</em></h2>
+            <p>Và mỗi phiên bản đều xứng đáng có một mùi hương của riêng mình.</p>
+            <a href="shop.html" class="mood-button mood-button--dark">KHÁM PHÁ BỘ SƯU TẬP <span>↗</span></a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-main">
+
+                <div class="footer-brand">
+
+                    <a href="../index.html" class="footer-logo">
+                        <img src="../assets/images/logo/logo-scentie-trang.png"
+                             alt="SCENTIE Logo">
+                    </a>
+
+                    <p>
+                        Wear your mood.<br>
+                        Mang theo mood của bạn, ở bất cứ đâu.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>KHÁM PHÁ</h3>
+
+                    <a href="shop.html">Sản phẩm</a>
+                    <a href="collections.html">Bộ sưu tập</a>
+                    <a href="about.html">Về SCENTIE</a>
+                    <a href="find-your-mood.html">Tìm mood</a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>HỖ TRỢ</h3>
+
+                    <a href="faq.html">Câu hỏi thường gặp</a>
+                    <a href="faq.html">Hướng dẫn sử dụng</a>
+                    <a href="faq.html">Chính sách mua hàng</a>
+                    <a href="faq.html">Liên hệ</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+                © 2026 SCENTIE. ALL RIGHTS RESERVED.
+            </div>
+
+        </div>
+
+    </footer>
+<div class="search-overlay"
+     id="searchOverlay"
+     aria-hidden="true">
+
+    <div class="search-panel">
+
+        <button type="button"
+                class="search-close"
+                id="searchCloseBtn"
+                aria-label="Đóng tìm kiếm">
+            &times;
+        </button>
+
+        <p class="search-label">
+            SCENTIE SEARCH ✦
+        </p>
+
+        <h2>
+            Bạn đang tìm kiếm sản phẩm nào?
+        </h2>
+
+        <form class="search-form" id="searchForm">
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Nhập tên sản phẩm, mùi hương..."
+                autocomplete="off"
+                aria-label="Nhập từ khóa tìm kiếm"
+            >
+
+            <button type="submit"
+                    class="search-submit"
+                    aria-label="Tìm kiếm">
+                ⌕
+            </button>
+
+        </form>
+
+        
+        <div class="search-suggestions">
+            <p>GỢI Ý TÌM KIẾM</p>
+
+            <div class="search-tags">
+                <button type="button" data-mood="focus">Focus</button>
+                <button type="button" data-mood="energy">Energy</button>
+                <button type="button" data-mood="calm">Calm</button>
+                <button type="button" data-mood="date">Date</button>
+                <button type="button" data-mood="fun">Fun</button>
+            </div>
+        </div>
+
+        <!-- LIVE SEARCH RESULTS -->
+        <div class="search-live-results" id="searchLiveResults">
+            <!-- Search suggestions will appear here -->
+        </div>
+    </div>
+
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-client.js"></script>
+    <script src="../js/account-header.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/find-your-mood.js"></script>
+</body>
+</html>

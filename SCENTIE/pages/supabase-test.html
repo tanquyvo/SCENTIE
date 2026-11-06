@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCENTIE — Supabase Connection Test</title>
+    <style>
+        :root { color-scheme: light; font-family: Arial, sans-serif; }
+        body { margin: 0; padding: 40px 20px; background: #fff7fb; color: #302631; }
+        main { max-width: 680px; margin: 0 auto; padding: 28px; background: #fff; border: 1px solid #f0dce8; border-radius: 18px; }
+        h1 { margin-top: 0; }
+        button { padding: 11px 16px; border: 0; border-radius: 10px; background: #d93b83; color: white; font-weight: 700; cursor: pointer; }
+        #status { margin-top: 18px; padding: 14px; border-radius: 10px; background: #f7f3f6; white-space: pre-wrap; line-height: 1.5; }
+        .hint { color: #766b74; font-size: 14px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>SCENTIE × Supabase</h1>
+        <p class="hint">Trang kiểm tra kết nối tạm thời. Trang này không thay đổi giao diện các trang chính của SCENTIE.</p>
+        <button id="testConnection" type="button">Kiểm tra kết nối</button>
+        <div id="status" role="status" aria-live="polite">Đang chờ kiểm tra...</div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-client.js"></script>
+    <script>
+        const button = document.getElementById("testConnection");
+        const statusBox = document.getElementById("status");
+
+        button.addEventListener("click", async () => {
+            if (!window.scentieSupabase) {
+                statusBox.textContent = "Chưa khởi tạo được Supabase Client. Kiểm tra kết nối Internet và thư viện Supabase JS.";
+                return;
+            }
+
+            button.disabled = true;
+            statusBox.textContent = "Đang kết nối và đọc thử danh sách sản phẩm...";
+
+            try {
+                const { data, error } = await window.scentieSupabase
+                    .from("products")
+                    .select("id, name")
+                    .eq("is_active", true)
+                    .limit(5);
+
+                if (error) throw error;
+
+                statusBox.textContent =
+                    "KẾT NỐI THÀNH CÔNG!\n" +
+                    "Đọc được " + data.length + " sản phẩm mẫu từ bảng public.products.\n\n" +
+                    data.map((product, index) => (index + 1) + ". " + product.name + " (" + product.id + ")").join("\n");
+            } catch (error) {
+                console.error("[SCENTIE] Supabase connection test failed:", error);
+                statusBox.textContent =
+                    "CHƯA KẾT NỐI ĐƯỢC.\n" +
+                    "Thông báo: " + (error.message || String(error)) +
+                    "\n\nNếu lỗi liên quan đến bảng hoặc quyền truy cập, gửi ảnh kết quả cho người hỗ trợ để kiểm tra RLS/schema.";
+            } finally {
+                button.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

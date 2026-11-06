@@ -1,0 +1,1367 @@
+
+/* =========================================================
+   SCENTIE ACCOUNT — LIQUID GLASS / BUTTERCREAM MOTION
+   Scoped to .account-page. Warm pastel gold + water-bubble UI.
+   ========================================================= */
+.account-page{
+ --acc-ink:#302b22;--acc-muted:#8d8374;--acc-line:#eee6d6;
+ --acc-paper:#fffdf7;--acc-cream:#fff9e9;--acc-butter:#f8edc9;
+ --acc-gold:#c6a65b;--acc-gold-deep:#a8873e;--acc-gold-soft:#f4e7bd;
+ background:
+  radial-gradient(ellipse at 8% 12%,#f7edcf88,transparent 31%),
+  radial-gradient(ellipse at 93% 35%,#f1e2bd70,transparent 29%),
+  radial-gradient(ellipse at 60% 92%,#fff2c755,transparent 28%),#fffdf8;
+ color:var(--acc-ink);overflow-x:hidden
+}
+.account-page:before,.account-page:after{
+ content:"";position:fixed;z-index:0;pointer-events:none;border-radius:50%;
+ background:radial-gradient(circle at 32% 27%,#ffffffd9 0 4%,#fff9 13%,#f5e7bf55 34%,#d7bd7650 62%,#ffffff20 72%);
+ border:1px solid #fff9;box-shadow:inset -12px -18px 34px #c6a65b12,inset 9px 10px 28px #fff9,0 18px 55px #9b7b3520;
+ backdrop-filter:blur(3px);animation:glassFloat 12s ease-in-out infinite
+}
+.account-page:before{width:180px;height:180px;top:19%;left:-105px}
+.account-page:after{width:110px;height:110px;right:-54px;bottom:13%;animation-delay:-5s}
+@keyframes glassFloat{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(18px,-24px,0) rotate(12deg)}}
+.account-page .site-header,.account-main,.account-footer{position:relative;z-index:1}
+.account-main{width:min(1340px,calc(100% - 64px));margin:36px auto 70px;min-height:540px}
+.account-page [hidden]{display:none!important}
+
+/* Liquid glass surfaces */
+.member-sidebar,.content-card,.stat-card,.order-card,.address-card,.auth-shell{
+ background:linear-gradient(145deg,#ffffffd9,#fffdf2b8)!important;
+ border:1px solid #ffffffd9!important;
+ box-shadow:0 18px 50px #806b3a0c,0 2px 10px #806b3a08,inset 0 1px 0 #fff!important;
+ backdrop-filter:blur(22px) saturate(145%);-webkit-backdrop-filter:blur(22px) saturate(145%)
+}
+.member-sidebar{border-radius:24px!important;transition:box-shadow .35s,transform .35s}
+.member-sidebar:hover{box-shadow:0 24px 65px #806b3a17,inset 0 1px 0 #fff!important}
+.member-mini-profile{padding:7px 6px 19px}
+.member-avatar{
+ position:relative;display:grid;place-items:center;overflow:hidden;isolation:isolate;
+ width:48px;height:48px;flex:0 0 48px;border:1px solid #fff;border-radius:50%;
+ background:linear-gradient(145deg,#fff7d9,#e8d49e);color:#8e7137;
+ box-shadow:0 0 0 1px #e7d9b9,0 7px 22px #9a7c3a20,inset 0 1px 4px #fff;
+ font-size:17px;font-weight:900
+}
+.member-avatar:after{position:absolute;inset:-50%;z-index:-1;content:"";background:linear-gradient(115deg,transparent 38%,#ffffffa8 48%,transparent 58%);transform:translateX(-65%) rotate(20deg);transition:transform .7s}
+.member-avatar:hover:after{transform:translateX(65%) rotate(20deg)}
+.member-avatar img{width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.member-avatar.large{width:82px;height:82px;flex-basis:82px;font-size:25px}
+.member-mini-profile strong{font-size:12px;color:#403827}
+.member-mini-profile span{margin-top:5px;color:#a09683;font-size:9px}
+.side-divider{height:1px;margin:10px 0 16px;background:linear-gradient(90deg,transparent,#e8ddc5 15%,#e8ddc5 85%,transparent)}
+.side-label{color:#b1a17e;font-size:8px;letter-spacing:.17em}
+.account-nav{gap:7px}
+.account-nav-item{
+ position:relative;isolation:isolate;overflow:hidden;min-height:47px;padding:0 13px;
+ border:1px solid transparent;border-radius:14px;background:transparent;color:#746a58;
+ font-size:11px;font-weight:750;transition:transform .28s cubic-bezier(.2,.8,.2,1),background .28s,border-color .28s,box-shadow .28s,color .28s
+}
+.account-nav-item:before{
+ position:absolute;z-index:-1;inset:0;content:"";opacity:0;
+ background:radial-gradient(circle at var(--mx,50%) var(--my,50%),#fff 0,#fff8 12%,#f5e8c5aa 35%,#fff0 72%);
+ transition:opacity .3s
+}
+.account-nav-item:hover{transform:translateX(5px) scale(1.015);border-color:#eee2c6;background:#fff9e8aa;color:#876b35;box-shadow:0 7px 22px #92763b12}
+.account-nav-item:hover:before{opacity:1}
+.account-nav-item>span{width:26px;height:26px;border-radius:9px;background:#f7f0df;color:#9b895e;transition:transform .3s,background .3s,box-shadow .3s}
+.account-nav-item:hover>span{transform:rotate(-8deg) scale(1.1);background:#f1e3bd;box-shadow:0 4px 12px #a98b4824}
+.account-nav-item.is-active{border-color:#eadbb7;background:linear-gradient(105deg,#f7edcfdd,#fffaf0bb);color:#886b32;box-shadow:inset 3px 0 #c6a65b,0 7px 20px #92763b0c}
+.account-nav-item.is-active>span{background:#f0e3c2;color:#8e7137}
+.account-logout{border-radius:12px;transition:background .25s,transform .25s,color .25s}
+.account-logout:hover{transform:translateX(4px);background:#fff5ed;color:#a45e4d}
+
+/* Bubbly hero */
+#view-overview>.content-heading,.member-content>.content-heading{
+ position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:20px;
+ min-height:172px;margin:0 0 18px;padding:30px 34px;border:1px solid #fff!important;border-radius:26px;
+ background:linear-gradient(112deg,#fff8e5e8 0%,#f6ebcae8 58%,#efe0b6d9 100%)!important;
+ box-shadow:0 18px 45px #8b713414,inset 0 1px 0 #fff!important;backdrop-filter:blur(24px)
+}
+#view-overview>.content-heading:before,.member-content>.content-heading:before{
+ position:absolute;z-index:-1;content:"";width:230px;height:230px;right:7%;top:-115px;border-radius:50%;
+ background:radial-gradient(circle at 30% 25%,#fff 0 5%,#ffffffa8 13%,#fff5 30%,#e8d49c66 58%,#fff0 72%);
+ border:1px solid #fff9;box-shadow:inset -12px -15px 30px #c6a65b20,0 18px 45px #9d81451c;
+ animation:heroBubble 9s ease-in-out infinite
+}
+#view-overview>.content-heading:after{position:absolute;z-index:-1;content:"";width:74px;height:74px;right:29%;bottom:-31px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff,#fff9 28%,#e8d49c66 70%);box-shadow:inset -6px -8px 18px #c6a65b22,0 9px 25px #9d814522;animation:heroBubble 7s ease-in-out -2s infinite}
+@keyframes heroBubble{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(17px) scale(1.06)}}
+#view-overview .content-heading h1,.member-content>.content-heading h1{margin:0;color:#3d3425;font-size:clamp(27px,3vw,38px);letter-spacing:-.055em}
+#view-overview .content-heading p:not(.account-eyebrow),.member-content>.content-heading p:not(.account-eyebrow){max-width:470px;margin:9px 0 0;color:#857858;font-size:11px;line-height:1.8}
+.account-eyebrow{color:#a28648;font-size:9px;font-weight:900;letter-spacing:.2em}
+.member-chip{padding:10px 15px;border:1px solid #fff;border-radius:30px;background:#fff9e9a8;color:#9a7c3e;font-size:8px;font-weight:900;letter-spacing:.1em;box-shadow:0 6px 18px #947a4010;backdrop-filter:blur(12px)}
+
+/* Hover lift + subtle shine */
+.overview-stats{gap:14px;margin-bottom:18px}
+.stat-card{position:relative;isolation:isolate;overflow:hidden;padding:21px;border-radius:19px!important;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s!important}
+.stat-card:before,.content-card:before,.order-card:before,.address-card:before{
+ position:absolute;inset:0;z-index:-1;content:"";pointer-events:none;opacity:0;
+ background:linear-gradient(115deg,transparent 20%,#fff9 47%,transparent 67%);transform:translateX(-110%);transition:transform .8s,opacity .25s
+}
+.stat-card:hover,.content-card:hover,.order-card:hover,.address-card:hover{transform:translateY(-5px);box-shadow:0 22px 45px #806b3a17,inset 0 1px 0 #fff!important;border-color:#e8d7ae!important}
+.stat-card:hover:before,.content-card:hover:before,.order-card:hover:before,.address-card:hover:before{opacity:1;transform:translateX(110%)}
+.stat-card:after{right:-17px;bottom:-29px;border-color:#eadfbe;background:radial-gradient(circle at 30% 25%,#fff,#f5e9c9 65%,#fff0);box-shadow:inset -7px -10px 20px #c6a65b18,0 0 0 13px #f8f0dc44,0 0 0 26px #f8f0dc22;transition:transform .5s}
+.stat-card:hover:after{transform:translate(-8px,-8px) scale(1.12)}
+.stat-card strong{color:#a88949}
+.content-card{position:relative;isolation:isolate;overflow:hidden;padding:24px;border-radius:20px!important;transition:transform .35s,box-shadow .35s!important}
+.card-heading h2{color:#3e3628;font-size:18px}
+.text-action{transition:color .2s,transform .2s}
+.text-action:hover{color:#725727;transform:translateX(3px)}
+.empty-state{border:1px dashed #e8dfcb;border-radius:14px;background:#fffdf7;color:#a39986}
+.quick-profile-grid>div{border:1px solid #f0e9da;border-radius:13px;background:#fffdf8;transition:transform .25s,border-color .25s,box-shadow .25s}
+.quick-profile-grid>div:hover{transform:translateY(-3px);border-color:#e3d2a9;box-shadow:0 10px 22px #806b3a10}
+
+/* Avatar uploader */
+.profile-identity{display:flex;align-items:center;gap:18px;padding-bottom:21px;margin-bottom:22px;border-bottom:1px solid #f0e8d9}
+.avatar-uploader{position:relative;flex:0 0 auto}
+.avatar-uploader .member-avatar{width:88px;height:88px;flex-basis:88px}
+.avatar-edit-bubble{
+ position:absolute;right:-3px;bottom:1px;display:grid;place-items:center;width:29px;height:29px;
+ border:2px solid #fff;border-radius:50%;background:linear-gradient(145deg,#fff7db,#d8c18a);
+ color:#80652e;font-size:13px;cursor:pointer;box-shadow:0 5px 15px #8d71352b;transition:transform .25s,box-shadow .25s
+}
+.avatar-edit-bubble:hover{transform:scale(1.14) rotate(18deg);box-shadow:0 8px 22px #8d71354a}
+.profile-identity-copy strong,.profile-identity-copy span{display:block}
+.profile-identity-copy strong{font-size:14px;color:#403827}
+.profile-identity-copy>span{margin-top:4px;color:#9c927f;font-size:10px}
+.avatar-upload-link{display:inline-block;margin-top:9px;color:#98793d;font-size:10px;font-weight:900;cursor:pointer;transition:color .2s,transform .2s}
+.avatar-upload-link:hover{color:#665022;transform:translateX(3px)}
+.profile-identity-copy small{display:block;margin-top:4px;color:#b1a58f;font-size:8px}
+.avatar-storage-note{margin:12px 0 0;color:#a69b88;font-size:9px;line-height:1.7}
+
+/* Glass controls */
+.account-primary{position:relative;isolation:isolate;overflow:hidden;border:1px solid #fff9!important;border-radius:13px!important;background:linear-gradient(115deg,#d6c184,#b99a53)!important;box-shadow:0 9px 22px #a8894527,inset 0 1px 0 #fff7!important;transition:transform .25s,box-shadow .25s,filter .25s!important}
+.account-primary:before{position:absolute;z-index:-1;inset:0;content:"";background:linear-gradient(110deg,transparent 20%,#fff8 50%,transparent 75%);transform:translateX(-120%);transition:transform .65s}
+.account-primary:hover{transform:translateY(-3px);filter:brightness(1.04);box-shadow:0 15px 30px #a8894540,inset 0 1px 0 #fff!important}
+.account-primary:hover:before{transform:translateX(120%)}
+.account-primary:active{transform:translateY(0) scale(.98)}
+.account-field input,.form-field input,.form-field textarea{border:1px solid #e9e1d0;border-radius:12px;background:#fffefa;transition:border-color .25s,box-shadow .25s,transform .25s}
+.account-field input:focus,.form-field input:focus,.form-field textarea:focus{border-color:#c6a65b;box-shadow:0 0 0 4px #c6a65b20,0 8px 20px #a8894510;transform:translateY(-1px)}
+.auth-shell{border-radius:28px!important}
+.auth-art{background:radial-gradient(circle at 78% 19%,#fff9,transparent 23%),linear-gradient(145deg,#fff5d8,#f5e7bd 52%,#ead9a8)}
+.auth-art-orbit{animation:orbitDrift 18s ease-in-out infinite}
+@keyframes orbitDrift{50%{transform:translate(-24px,22px) rotate(14deg)}}
+.auth-switch-btn{transition:background .25s,box-shadow .25s,color .25s,transform .25s}
+.auth-switch-btn:hover{transform:translateY(-1px)}
+.auth-switch-btn.is-active{background:#fff;box-shadow:0 5px 16px #80652a18}
+
+/* Address/order cards */
+.address-card,.order-card{position:relative;isolation:isolate;overflow:hidden;border-radius:17px!important;transition:transform .3s,box-shadow .3s,border-color .3s!important}
+.address-actions button,.order-detail-toggle,.order-tab{transition:color .2s,background .2s,transform .2s}
+.address-actions button:hover,.order-detail-toggle:hover{transform:translateX(3px);color:#705522}
+.order-tabs{border:1px solid #eee6d7;border-radius:14px;background:#fffefa99;backdrop-filter:blur(16px)}
+.order-tab.is-active{background:linear-gradient(120deg,#f5e9c7,#fff9e9);box-shadow:inset 0 0 0 1px #e8d9b4,0 5px 15px #947a4010}
+.status-pill{box-shadow:inset 0 1px 0 #fff9}
+.account-footer{color:#a69b88}
+.account-footer a{color:#9d7e41}
+
+/* Responsive */
+@media(max-width:980px){.account-main{width:calc(100% - 36px)}}
+@media(max-width:720px){
+ .account-main{width:calc(100% - 24px);margin:22px auto 42px}
+ .member-layout{grid-template-columns:1fr;gap:13px}
+ .member-sidebar{position:static;padding:12px;border-radius:18px!important}
+ .account-nav{display:flex;gap:5px;overflow-x:auto;padding-bottom:2px}
+ .account-nav-item{flex:0 0 auto;width:auto;min-height:40px;padding:0 10px;white-space:nowrap}
+ .account-nav-item:hover{transform:translateY(-2px)}
+ #view-overview>.content-heading,.member-content>.content-heading{min-height:150px;padding:23px 22px}
+ .overview-stats{gap:8px}
+ .stat-card{padding:14px 12px}
+ .content-card{padding:17px}
+ .address-list{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+ .auth-shell{grid-template-columns:1fr;border-radius:21px!important}
+ .auth-art{min-height:225px;padding:27px 25px}
+ .auth-art h1{font-size:39px}
+ .auth-panel{padding:30px 24px}
+ .overview-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .stat-card{padding:11px 8px}
+ .stat-card strong{font-size:21px}
+ .profile-form,.address-form{grid-template-columns:1fr}
+ .profile-identity{gap:14px}
+ .avatar-uploader .member-avatar{width:72px;height:72px;flex-basis:72px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
+
+
+/* =========================================================
+   ACCOUNT ORDER CARDS + SHARED BRAND FOOTER FIX
+   ========================================================= */
+
+/* Order card: restore readable hierarchy for JS-rendered markup. */
+.account-page .order-card{
+  display:block;
+  width:100%;
+  padding:18px 20px;
+  border-radius:18px;
+}
+.account-page .order-card-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  padding-bottom:13px;
+  border-bottom:1px solid #eee6d7;
+}
+.account-page .order-card-head>div{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:6px;
+  min-width:0;
+}
+.account-page .order-code{
+  display:block;
+  color:#96783e;
+  font-size:10px;
+  line-height:1.5;
+  font-weight:950;
+  letter-spacing:.04em;
+  overflow-wrap:anywhere;
+}
+.account-page .order-card-head small{
+  display:block;
+  color:#a59b89;
+  font-size:9px;
+  line-height:1.5;
+}
+.account-page .status-pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  padding:7px 11px;
+  border-radius:30px;
+  font-size:9px;
+  line-height:1.3;
+  font-weight:900;
+}
+.account-page .order-card-products{
+  display:grid;
+  gap:9px;
+  padding:14px 0;
+}
+.account-page .order-product-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  width:100%;
+  color:#6b604e;
+  font-size:11px;
+  line-height:1.6;
+}
+.account-page .order-product-row>span{
+  display:block;
+  min-width:0;
+  overflow-wrap:anywhere;
+}
+.account-page .order-product-row small{
+  display:inline;
+  color:#a69b88;
+  font-size:10px;
+}
+.account-page .order-product-row>strong{
+  display:block;
+  flex:0 0 auto;
+  color:#514735;
+  font-size:11px;
+  white-space:nowrap;
+}
+.account-page .order-card-foot{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:9px 16px;
+  padding-top:12px;
+  border-top:1px solid #eee6d7;
+  color:#9b917e;
+  font-size:9px;
+  line-height:1.6;
+}
+.account-page .order-card-foot>span{
+  display:block;
+}
+.account-page .order-card-foot>strong{
+  display:block;
+  color:#756a57;
+  font-size:10px;
+  font-weight:800;
+}
+.account-page .order-card-foot b{
+  color:#98783b;
+  font-size:15px;
+}
+.account-page .order-detail-toggle{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+  margin-top:10px;
+  padding:11px 0 0;
+  border:0;
+  border-top:1px solid #f1eadc;
+  border-radius:0;
+  background:transparent;
+  color:#96783e;
+  text-align:left;
+  font:inherit;
+  font-size:10px;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:none;
+}
+.account-page .order-detail-toggle:hover{
+  color:#705522;
+  background:transparent;
+}
+.account-page .order-detail-toggle span{
+  font-size:15px;
+}
+.account-page .order-detail-panel[hidden]{
+  display:none!important;
+}
+.account-page .order-detail-extra{
+  display:grid;
+  gap:10px;
+  margin-top:12px;
+  padding:14px;
+  border:1px solid #f0e8d7;
+  border-radius:12px;
+  background:#fffaf0;
+}
+.account-page .order-detail-extra>div small,
+.account-page .order-detail-extra>div strong{
+  display:block;
+}
+.account-page .order-detail-extra>div small{
+  margin-bottom:4px;
+  color:#a39884;
+  font-size:8px;
+}
+.account-page .order-detail-extra>div strong{
+  color:#665b47;
+  font-size:10px;
+  font-weight:650;
+  line-height:1.7;
+  overflow-wrap:anywhere;
+}
+.account-page .text-action{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  padding:7px 0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:#98793d;
+  font:inherit;
+  font-size:10px;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:none;
+}
+.account-page .text-action:hover{
+  color:#705522;
+  background:transparent;
+}
+
+/* The real shared footer uses home.css component styles.
+   Keep it in normal document flow after the account content. */
+.account-page .site-footer{
+  position:relative;
+  z-index:1;
+  display:block;
+  width:100%;
+  margin-top:54px;
+  clear:both;
+}
+.account-page .site-footer .container{
+  width:min(1320px,calc(100% - 64px));
+  margin:0 auto;
+}
+.account-page .site-footer .footer-main{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:40px;
+}
+.account-page .site-footer .footer-brand,
+.account-page .site-footer .footer-column{
+  min-width:0;
+}
+.account-page .site-footer .footer-logo img{
+  display:block;
+  width:112px;
+  max-width:100%;
+  height:auto;
+  object-fit:contain;
+}
+.account-page .site-footer .footer-brand p{
+  margin-top:16px;
+  line-height:1.8;
+}
+.account-page .site-footer .footer-column{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:11px;
+}
+.account-page .site-footer .footer-bottom{
+  margin-top:34px;
+}
+@media(max-width:720px){
+  .account-page .order-card{padding:14px}
+  .account-page .order-card-head{gap:9px}
+  .account-page .order-card-foot{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+  .account-page .site-footer{margin-top:36px}
+  .account-page .site-footer .container{width:calc(100% - 36px)}
+  .account-page .site-footer .footer-main{
+    grid-template-columns:1fr 1fr;
+    gap:25px 18px;
+  }
+  .account-page .site-footer .footer-brand{grid-column:1/-1}
+}
+
+
+/* =========================================================
+   SCENTIE ACCOUNT — REFINED NAV HOVER + LOGOUT CONTROL
+   Replace the previous rough hover with a quiet glass sheen.
+   ========================================================= */
+
+/* NAV: no sideways jump, no rotating icon, no hard glow. */
+.account-page .account-nav-item{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  gap:11px;
+  min-height:48px;
+  padding:0 14px;
+  border:1px solid transparent;
+  border-radius:15px;
+  background:transparent;
+  color:#766b57;
+  font:inherit;
+  font-size:11px;
+  font-weight:750;
+  text-align:left;
+  box-shadow:none;
+  transform:none;
+  transition:
+    color .24s ease,
+    background-color .24s ease,
+    border-color .24s ease,
+    box-shadow .24s ease;
+}
+
+/* A very soft light sweep, like light passing through a water bubble. */
+.account-page .account-nav-item::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:0;
+  border-radius:inherit;
+  opacity:0;
+  background:
+    linear-gradient(108deg,
+      transparent 5%,
+      rgba(255,255,255,.18) 28%,
+      rgba(255,255,255,.82) 48%,
+      rgba(255,255,255,.22) 66%,
+      transparent 92%),
+    linear-gradient(100deg,rgba(246,235,204,.72),rgba(255,253,246,.92));
+  transform:translateX(-16%);
+  transition:opacity .3s ease,transform .55s cubic-bezier(.2,.7,.2,1);
+  pointer-events:none;
+}
+
+.account-page .account-nav-item::after{
+  content:"";
+  position:absolute;
+  left:14px;
+  right:14px;
+  bottom:5px;
+  height:1px;
+  border-radius:2px;
+  opacity:0;
+  background:linear-gradient(90deg,transparent,#c7a85f88,transparent);
+  transition:opacity .25s ease;
+  pointer-events:none;
+}
+
+.account-page .account-nav-item:hover{
+  color:#876b35;
+  background:rgba(255,250,235,.68);
+  border-color:rgba(222,202,153,.48);
+  box-shadow:0 5px 16px rgba(153,126,65,.07),inset 0 1px 0 rgba(255,255,255,.9);
+  transform:none;
+}
+
+.account-page .account-nav-item:hover::before{
+  opacity:.82;
+  transform:translateX(0);
+}
+
+.account-page .account-nav-item:hover::after{
+  opacity:.85;
+}
+
+.account-page .account-nav-item > span{
+  position:relative;
+  z-index:1;
+  flex:0 0 30px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:30px;
+  height:30px;
+  margin:0;
+  border-radius:10px;
+  background:rgba(246,239,220,.9);
+  color:#9b8350;
+  font-size:15px;
+  line-height:1;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
+  transition:background .24s ease,color .24s ease,box-shadow .24s ease;
+}
+
+.account-page .account-nav-item:hover > span{
+  background:rgba(237,224,190,.82);
+  color:#80632d;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 2px 7px rgba(151,123,61,.08);
+  transform:none;
+}
+
+.account-page .account-nav-item.is-active{
+  color:#896b32;
+  border-color:rgba(218,194,137,.72);
+  background:linear-gradient(105deg,rgba(247,237,207,.88),rgba(255,252,243,.92));
+  box-shadow:inset 3px 0 #c6a65b,0 5px 15px rgba(153,126,65,.06),inset 0 1px 0 #fff;
+}
+
+.account-page .account-nav-item.is-active::before{
+  opacity:.24;
+  transform:translateX(0);
+}
+
+.account-page .account-nav-item.is-active > span{
+  background:#efe3c4;
+  color:#896b32;
+}
+
+/* LOGOUT: compact outlined pill, not the browser's default grey button. */
+.account-page .account-logout,
+.account-page #signOutBtn{
+  appearance:none;
+  -webkit-appearance:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:100%;
+  min-height:46px;
+  margin:0;
+  padding:0 17px;
+  border:1px solid rgba(219,204,169,.78);
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(255,253,247,.94),rgba(248,240,220,.82));
+  color:#88734a;
+  font-family:inherit;
+  font-size:11px;
+  font-weight:800;
+  line-height:1.2;
+  text-align:center;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.96),0 4px 12px rgba(137,112,57,.05);
+  cursor:pointer;
+  transform:none;
+  transition:
+    color .22s ease,
+    background .22s ease,
+    border-color .22s ease,
+    box-shadow .22s ease,
+    transform .22s ease;
+}
+
+.account-page .account-logout > span,
+.account-page #signOutBtn > span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 25px;
+  width:25px;
+  height:25px;
+  border-radius:9px;
+  background:rgba(237,226,199,.78);
+  color:#987b43;
+  font-size:15px;
+  line-height:1;
+  transition:background .22s ease,color .22s ease;
+}
+
+.account-page .account-logout:hover,
+.account-page #signOutBtn:hover{
+  color:#95634f;
+  border-color:rgba(213,177,153,.78);
+  background:linear-gradient(135deg,rgba(255,250,244,.98),rgba(250,235,222,.92));
+  box-shadow:inset 0 1px 0 #fff,0 7px 17px rgba(150,104,76,.09);
+  transform:translateY(-1px);
+}
+
+.account-page .account-logout:hover > span,
+.account-page #signOutBtn:hover > span{
+  background:rgba(241,220,205,.9);
+  color:#a16b54;
+}
+
+.account-page .account-logout:active,
+.account-page #signOutBtn:active{
+  transform:translateY(0) scale(.99);
+  box-shadow:inset 0 2px 5px rgba(137,112,57,.08);
+}
+
+.account-page .account-nav-item:focus-visible,
+.account-page .account-logout:focus-visible,
+.account-page #signOutBtn:focus-visible{
+  outline:2px solid rgba(190,158,88,.7);
+  outline-offset:3px;
+}
+
+@media(prefers-reduced-motion:reduce){
+  .account-page .account-nav-item,
+  .account-page .account-nav-item::before,
+  .account-page .account-nav-item::after,
+  .account-page .account-nav-item > span,
+  .account-page .account-logout,
+  .account-page #signOutBtn,
+  .account-page .account-logout > span,
+  .account-page #signOutBtn > span{
+    transition:none!important;
+  }
+}
+
+
+/* =========================================================
+   SCENTIE ACCOUNT — BASE LAYOUT + PROFILE FORM SOFT GLASS
+   Rebuilt against the exact account.html/account.js supplied.
+   ========================================================= */
+
+/* The desktop two-column shell was missing its base display rule. */
+.account-page .member-layout{
+  display:grid;
+  grid-template-columns:276px minmax(0,1fr);
+  align-items:start;
+  gap:28px;
+  width:100%;
+}
+.account-page .member-sidebar{
+  position:sticky;
+  top:24px;
+  display:flex;
+  flex-direction:column;
+  align-self:start;
+  min-width:0;
+  padding:24px 20px;
+}
+.account-page .member-mini-profile{
+  display:flex;
+  align-items:center;
+  gap:13px;
+}
+.account-page .member-mini-profile > div:last-child{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+}
+.account-page .member-mini-profile strong,
+.account-page .member-mini-profile span{
+  overflow-wrap:anywhere;
+}
+.account-page .account-nav{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:7px;
+  width:100%;
+}
+.account-page .account-nav-item{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  width:100%;
+  min-width:0;
+  text-align:left;
+  cursor:pointer;
+}
+.account-page .account-nav-item > span{
+  display:inline-flex;
+  flex:0 0 30px;
+  align-items:center;
+  justify-content:center;
+}
+.account-page .account-logout{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  width:100%;
+  min-height:44px;
+  padding:0 14px;
+  border:1px solid #e4d5b3;
+  border-radius:13px;
+  background:linear-gradient(135deg,#fffdf7,#f7efd9);
+  color:#89713f;
+  font-family:inherit;
+  font-size:11px;
+  font-weight:800;
+  cursor:pointer;
+  box-shadow:inset 0 1px 0 #fff,0 5px 14px #8d71350b;
+  transition:background .22s,border-color .22s,box-shadow .22s,transform .22s;
+}
+.account-page .account-logout > span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:27px;
+  height:27px;
+  border-radius:9px;
+  background:#f0e5c8;
+  color:#94773d;
+}
+.account-page .account-logout:hover{
+  transform:translateY(-1px);
+  border-color:#d9c28e;
+  background:linear-gradient(135deg,#fffaf0,#f4e8c9);
+  color:#765b2b;
+  box-shadow:0 8px 18px #8d713515,inset 0 1px 0 #fff;
+}
+.account-page .member-content{
+  display:block;
+  min-width:0;
+  width:100%;
+}
+.account-page .member-view{
+  display:none;
+  min-width:0;
+  width:100%;
+}
+.account-page .member-view.is-active{
+  display:block;
+}
+.account-page .overview-stats{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  width:100%;
+}
+.account-page .stat-card{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  min-width:0;
+}
+.account-page .quick-profile-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+.account-page .quick-profile-grid > div{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  min-width:0;
+  padding:13px;
+}
+.account-page .quick-profile-grid strong{
+  overflow-wrap:anywhere;
+}
+
+/* PROFILE FORM — label above input, consistent field rhythm. */
+.account-page .profile-edit-card{
+  min-width:0;
+  padding:26px 28px;
+}
+.account-page .profile-form{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:start;
+  gap:20px 24px;
+  width:100%;
+  margin:0;
+}
+.account-page .profile-form .form-field{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:8px;
+  min-width:0;
+  width:100%;
+  margin:0;
+}
+.account-page .profile-form .form-field label{
+  display:block;
+  width:100%;
+  margin:0;
+  color:#78694d;
+  font-size:11px;
+  font-weight:750;
+  line-height:1.5;
+}
+.account-page .profile-form .form-field input{
+  display:block;
+  width:100%;
+  min-width:0;
+  height:49px;
+  box-sizing:border-box;
+  margin:0;
+  padding:0 15px;
+  border:1px solid #e8ddc5;
+  border-radius:13px;
+  background:rgba(255,254,249,.9);
+  color:#493f2e;
+  font-family:inherit;
+  font-size:13px;
+  line-height:1.4;
+  box-shadow:inset 0 1px 2px rgba(120,95,45,.025);
+  transition:border-color .22s ease,box-shadow .22s ease,background .22s ease;
+}
+.account-page .profile-form .form-field input::placeholder{
+  color:#b4a993;
+}
+.account-page .profile-form .form-field input:focus{
+  outline:none;
+  border-color:#c6a65b;
+  background:#fff;
+  box-shadow:0 0 0 4px rgba(198,166,91,.12),0 5px 14px rgba(137,112,57,.05);
+  transform:none;
+}
+.account-page .profile-form .form-field input:disabled{
+  background:rgba(245,239,224,.78);
+  color:#968a73;
+  border-color:#e9e1d0;
+  cursor:not-allowed;
+  opacity:1;
+}
+.account-page .profile-form .form-field:nth-child(3){
+  grid-column:1/-1;
+}
+.account-page .profile-form .form-actions{
+  grid-column:1/-1;
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+  width:100%;
+  margin:0;
+}
+.account-page .profile-form .form-actions button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-width:150px;
+  min-height:46px;
+  margin:0;
+  padding:0 22px;
+  border-radius:13px;
+  font-family:inherit;
+  font-size:11px;
+  font-weight:800;
+}
+.account-page .profile-form .form-actions button:disabled{
+  cursor:wait;
+  opacity:.65;
+}
+.account-page .profile-edit-card .avatar-storage-note{
+  margin:14px 0 0;
+  color:#a69b88;
+  font-size:9px;
+  line-height:1.7;
+}
+
+/* Tablet and mobile: intentionally switch to stacked navigation. */
+@media(max-width:900px){
+  .account-page .member-layout{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  .account-page .member-sidebar{
+    position:relative;
+    top:auto;
+    padding:17px;
+  }
+  .account-page .account-nav{
+    display:flex;
+    flex-direction:row;
+    gap:7px;
+    overflow-x:auto;
+    padding:2px 1px 7px;
+    scrollbar-width:thin;
+  }
+  .account-page .account-nav-item{
+    flex:0 0 auto;
+    width:auto;
+    min-height:42px;
+    white-space:nowrap;
+  }
+  .account-page .account-logout{
+    width:100%;
+  }
+}
+@media(max-width:640px){
+  .account-page .overview-stats{
+    grid-template-columns:1fr;
+  }
+  .account-page .quick-profile-grid{
+    grid-template-columns:1fr;
+  }
+  .account-page .profile-edit-card{
+    padding:19px 16px;
+  }
+  .account-page .profile-form{
+    grid-template-columns:minmax(0,1fr);
+    gap:16px;
+  }
+  .account-page .profile-form .form-field:nth-child(3),
+  .account-page .profile-form .form-actions{
+    grid-column:1;
+  }
+  .account-page .profile-form .form-actions button{
+    width:100%;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .account-page .account-nav-item,
+  .account-page .account-logout,
+  .account-page .profile-form input{
+    transition:none!important;
+  }
+}
+
+
+/* =========================================================
+   SCENTIE — DASHBOARD INTERACTION & VISUAL HIERARCHY
+   Refined hover, stat cards and technical micro-motion.
+   ========================================================= */
+
+/* 1. NAVIGATION: no underline in any state */
+.account-page .account-nav-item,
+.account-page .account-nav-item:hover,
+.account-page .account-nav-item:focus,
+.account-page .account-nav-item:focus-visible,
+.account-page .account-nav-item.is-active {
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+    -webkit-text-decoration: none !important;
+    border-bottom: 1px solid transparent;
+}
+.account-page .account-nav-item::after,
+.account-page .account-nav-item:hover::after,
+.account-page .account-nav-item.is-active::after {
+    content: none !important;
+    display: none !important;
+}
+.account-page .account-nav-item {
+    transform: translateY(0);
+    transition:
+        transform .28s cubic-bezier(.2,.8,.2,1),
+        background .28s ease,
+        border-color .28s ease,
+        box-shadow .28s ease,
+        color .28s ease;
+}
+.account-page .account-nav-item:hover {
+    transform: translateY(-2px) !important;
+    border-color: #eadbb9 !important;
+    background:
+        radial-gradient(circle at 18% 50%, rgba(255,255,255,.98), transparent 54%),
+        linear-gradient(105deg, rgba(255,250,235,.96), rgba(255,255,255,.72)) !important;
+    color: #876b35 !important;
+    box-shadow:
+        0 8px 20px rgba(151,123,61,.09),
+        inset 0 1px 0 rgba(255,255,255,.95) !important;
+}
+.account-page .account-nav-item:hover > span {
+    transform: translateY(-1px) scale(1.06) !important;
+    box-shadow: 0 5px 13px rgba(169,139,72,.17) !important;
+}
+.account-page .account-nav-item.is-active {
+    border-bottom-color: #eadbb7 !important;
+    box-shadow:
+        inset 3px 0 #c6a65b,
+        0 7px 20px rgba(146,118,59,.08),
+        inset 0 1px 0 rgba(255,255,255,.95) !important;
+}
+
+/* 2. STAT CARDS: hierarchy, contrast and glass depth */
+.account-page .overview-stats {
+    perspective: 1000px;
+}
+.account-page .overview-stats .stat-card {
+    min-height: 174px;
+    padding: 23px 24px 21px !important;
+    gap: 0;
+    border: 1px solid rgba(255,255,255,.92) !important;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(248,235,198,.68), transparent 43%),
+        linear-gradient(145deg, rgba(255,255,255,.96), rgba(255,252,241,.88)) !important;
+    box-shadow:
+        0 14px 34px rgba(120,98,49,.075),
+        inset 0 1px 0 rgba(255,255,255,.98) !important;
+    animation: scentie-stat-enter .7s cubic-bezier(.2,.75,.25,1) both;
+}
+.account-page .overview-stats .stat-card:nth-child(2) {
+    animation-delay: .09s;
+}
+.account-page .overview-stats .stat-card:nth-child(3) {
+    animation-delay: .18s;
+}
+.account-page .overview-stats .stat-card > span {
+    display: block;
+    position: relative;
+    z-index: 1;
+    margin: 0 0 11px;
+    color: #766747 !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    line-height: 1.45;
+    letter-spacing: .055em;
+}
+.account-page .overview-stats .stat-card > strong {
+    display: block;
+    position: relative;
+    z-index: 1;
+    margin: 0 0 7px;
+    color: #a7833d !important;
+    font-size: clamp(34px, 3vw, 43px) !important;
+    font-weight: 850 !important;
+    line-height: .98;
+    letter-spacing: -.055em;
+    text-shadow: 0 3px 15px rgba(190,157,84,.14);
+}
+.account-page .overview-stats .stat-card > small {
+    display: block;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #a09580 !important;
+    font-size: 10px !important;
+    font-weight: 550;
+    line-height: 1.55;
+}
+.account-page .overview-stats .stat-card::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 17px;
+    right: 18px;
+    width: 43px;
+    height: 43px;
+    border: 1px solid rgba(201,174,116,.42);
+    border-radius: 15px;
+    background:
+        radial-gradient(circle at 32% 27%, #fff 0, rgba(255,255,255,.72) 19%, transparent 65%),
+        linear-gradient(145deg, rgba(245,231,194,.72), rgba(255,255,255,.38));
+    box-shadow:
+        inset 0 1px 3px rgba(255,255,255,.95),
+        0 7px 18px rgba(168,139,75,.09);
+    transform: rotate(8deg);
+    transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s;
+}
+.account-page .overview-stats .stat-card:hover {
+    transform: translateY(-6px) rotateX(1.5deg) !important;
+    border-color: rgba(215,190,137,.8) !important;
+    box-shadow:
+        0 22px 42px rgba(128,107,58,.13),
+        inset 0 1px 0 #fff !important;
+}
+.account-page .overview-stats .stat-card:hover::after {
+    transform: rotate(0deg) scale(1.1);
+    box-shadow:
+        inset 0 1px 3px rgba(255,255,255,.98),
+        0 9px 24px rgba(168,139,75,.17);
+}
+
+/* Soft light sweep on hover */
+.account-page .overview-stats .stat-card::before {
+    z-index: 0;
+    opacity: 0;
+    transform: translateX(-125%) skewX(-12deg);
+    background: linear-gradient(
+        105deg,
+        transparent 28%,
+        rgba(255,255,255,.76) 48%,
+        transparent 68%
+    );
+    transition: transform .85s ease, opacity .2s ease;
+}
+.account-page .overview-stats .stat-card:hover::before {
+    opacity: 1;
+    transform: translateX(125%) skewX(-12deg);
+}
+
+/* 3. Subtle technical motion across the account dashboard */
+.account-page .content-card,
+.account-page .stat-card,
+.account-page .member-sidebar {
+    transform-style: preserve-3d;
+}
+.account-page .content-card {
+    transition:
+        transform .32s cubic-bezier(.2,.8,.2,1),
+        box-shadow .32s ease,
+        border-color .32s ease !important;
+}
+.account-page .member-chip {
+    position: relative;
+    overflow: hidden;
+}
+.account-page .member-chip::after {
+    content: "";
+    position: absolute;
+    inset: -30% auto -30% -55%;
+    width: 35%;
+    transform: skewX(-22deg);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.85), transparent);
+    animation: scentie-chip-glint 5.5s ease-in-out infinite;
+    pointer-events: none;
+}
+.account-page .account-eyebrow {
+    position: relative;
+    width: fit-content;
+}
+.account-page .account-eyebrow::after {
+    content: "";
+    display: block;
+    width: 26px;
+    height: 1px;
+    margin-top: 7px;
+    background: linear-gradient(90deg, #c6a65b, rgba(198,166,91,0));
+    transform-origin: left;
+    transition: width .35s ease;
+}
+.account-page .content-card:hover .account-eyebrow::after {
+    width: 48px;
+}
+.account-page .account-nav-item:focus-visible,
+.account-page .account-logout:focus-visible,
+.account-page .text-action:focus-visible {
+    outline: 2px solid rgba(190,157,84,.58);
+    outline-offset: 3px;
+}
+
+@keyframes scentie-stat-enter {
+    from { opacity: 0; transform: translateY(14px) scale(.985); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes scentie-chip-glint {
+    0%, 66%, 100% { left: -55%; }
+    82% { left: 125%; }
+}
+
+@media (max-width: 640px) {
+    .account-page .overview-stats .stat-card {
+        min-height: 145px;
+        padding: 19px !important;
+    }
+    .account-page .overview-stats .stat-card > strong {
+        font-size: 36px !important;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .account-page .overview-stats .stat-card,
+    .account-page .member-chip::after {
+        animation: none !important;
+    }
+    .account-page .account-nav-item,
+    .account-page .stat-card,
+    .account-page .content-card,
+    .account-page .member-chip::after {
+        transition: none !important;
+    }
+}
+
+
+/* =========================================================
+   STAT CARDS — REMOVE THE FLOATING SQUARE DECORATION
+   Keep the liquid-glass depth with a soft champagne glow.
+   ========================================================= */
+.account-page .overview-stats .stat-card::after {
+    content: none !important;
+    display: none !important;
+}
+
+.account-page .overview-stats .stat-card {
+    background-image:
+        radial-gradient(
+            circle at 96% 4%,
+            rgba(239, 222, 174, .34) 0,
+            rgba(255, 249, 229, .20) 17%,
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.94),
+            rgba(255,253,246,.84)
+        ) !important;
+}
+
+
+/* =========================================================
+   SCENTIE ACCOUNT — ORDERS FILTER + ADDRESS EMPTY STATE
+   Scoped to account views; no global button/paragraph changes.
+   ========================================================= */
+
+/* Orders: turn browser-default buttons into soft-glass filter chips. */
+.account-page #view-orders .order-tabs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    margin: 0 0 16px;
+    padding: 9px;
+    border: 1px solid rgba(226, 213, 184, .78);
+    border-radius: 17px;
+    background: rgba(255, 253, 247, .66);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.95),
+                0 8px 22px rgba(137,112,57,.045);
+    backdrop-filter: blur(18px) saturate(135%);
+    -webkit-backdrop-filter: blur(18px) saturate(135%);
+}
+
+.account-page #view-orders .order-tab {
+    appearance: none;
+    -webkit-appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    margin: 0;
+    padding: 0 16px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: rgba(246, 241, 229, .72);
+    color: #88795d;
+    font: 700 11px/1.2 inherit;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.8);
+    transition: color .22s ease, background .22s ease,
+                border-color .22s ease, box-shadow .22s ease,
+                transform .22s ease;
+}
+
+.account-page #view-orders .order-tab:hover {
+    transform: translateY(-1px);
+    border-color: rgba(211, 190, 143, .55);
+    background: rgba(255, 250, 235, .96);
+    color: #80652f;
+    box-shadow: 0 5px 13px rgba(137,112,57,.08),
+                inset 0 1px 0 #fff;
+    text-decoration: none !important;
+}
+
+.account-page #view-orders .order-tab.is-active {
+    border-color: rgba(197, 166, 95, .52);
+    background: linear-gradient(135deg, #e8d6a7, #c5a45d);
+    color: #fffdf6;
+    box-shadow: 0 6px 15px rgba(168,137,69,.2),
+                inset 0 1px 0 rgba(255,255,255,.58);
+}
+
+.account-page #view-orders .order-tab:focus,
+.account-page #view-orders .order-tab:focus-visible {
+    outline: none;
+    text-decoration: none !important;
+}
+
+.account-page #view-orders .order-tab:focus-visible {
+    box-shadow: 0 0 0 3px rgba(197,166,95,.18),
+                0 6px 15px rgba(168,137,69,.16);
+}
+
+/* Address + orders empty states: prevent oversized inherited paragraph text. */
+.account-page .member-view .empty-state {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 62px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 16px 19px;
+    border: 1px dashed rgba(218, 203, 169, .82);
+    border-radius: 15px;
+    background: linear-gradient(110deg,
+        rgba(255,255,255,.76),
+        rgba(255,250,235,.72)
+    );
+    color: #9b8d72;
+    font-family: inherit;
+    font-size: 12px !important;
+    font-weight: 550;
+    line-height: 1.65 !important;
+    letter-spacing: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.92);
+}
+
+.account-page #view-addresses .address-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 13px;
+    min-width: 0;
+    width: 100%;
+    margin-top: 2px;
+}
+
+.account-page #view-addresses .address-list > .empty-state {
+    max-width: 100%;
+}
+
+.account-page #view-addresses .content-heading {
+    margin-bottom: 18px;
+}
+
+.account-page #view-addresses #addAddressBtn {
+    flex: 0 0 auto;
+    min-height: 42px;
+    padding: 0 19px;
+    white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+    .account-page #view-orders .order-tabs {
+        gap: 7px;
+        padding: 8px;
+    }
+    .account-page #view-orders .order-tab {
+        min-height: 36px;
+        padding: 0 12px;
+        font-size: 10px;
+    }
+    .account-page #view-addresses .content-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+    .account-page #view-addresses #addAddressBtn {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .account-page #view-orders .order-tab {
+        transition: none !important;
+    }
+}

@@ -1,0 +1,50 @@
+
+/* ========================================
+   SCENTIE - GLOBAL STYLES
+   ======================================== */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap');
+
+/* Reset */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    font-family: "Be Vietnam Pro", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #D66E91;
+    outline-offset: 4px;
+}
+
+::selection {
+    background: #F5DDE4;
+    color: #302D35;
+}

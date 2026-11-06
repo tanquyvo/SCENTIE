@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#faf8ff">
+
+    <title>Admin Login | SCENTIE</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body class="admin-login-page">
+    <div class="admin-orb one"></div><div class="admin-orb two"></div>
+
+    <main class="admin-login-wrapper">
+
+        <section class="admin-login-card">
+
+            <a href="../index.html" class="admin-brand">
+                SCENTIE<span>.</span>
+            </a>
+
+            <div class="admin-login-heading">
+                <span class="admin-eyebrow">ADMINISTRATION PORTAL</span>
+                <h1>Welcome back.</h1>
+                <p>Đăng nhập để truy cập Nocturne Control Center và vận hành SCENTIE.</p>
+            </div>
+
+            <form id="adminLoginForm">
+
+                <div class="admin-form-group">
+                    <label for="adminEmail">Email</label>
+                    <input
+                        type="email"
+                        id="adminEmail"
+                        name="email"
+                        placeholder="Nhập email quản trị"
+                        autocomplete="username"
+                        required
+                    >
+                </div>
+
+                <div class="admin-form-group">
+                    <label for="adminPassword">Mật khẩu</label>
+                    <input
+                        type="password"
+                        id="adminPassword"
+                        name="password"
+                        placeholder="Nhập mật khẩu"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+
+                <p id="adminLoginMessage" class="admin-login-message"
+                   role="alert" aria-live="polite"></p>
+
+                <button type="submit" id="adminLoginButton">
+                    Đăng nhập Admin
+                </button>
+
+            </form>
+
+            <div class="admin-login-footer">
+                <a href="../index.html">← Quay lại SCENTIE</a>
+                <span>NOCTURNE CONTROL CENTER</span>
+            </div>
+
+        </section>
+
+        <p class="admin-copyright">
+            © 2026 SCENTIE. All rights reserved.
+        </p>
+
+    </main>
+
+    <!-- Supabase JavaScript SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- SCENTIE Supabase Client -->
+    <script src="../js/supabase-client.js"></script>
+
+    <!-- Admin Authentication -->
+    <script src="../js/admin-auth.js"></script>
+
+</body>
+</html>

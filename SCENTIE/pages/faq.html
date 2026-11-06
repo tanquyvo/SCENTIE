@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu hỏi thường gặp — SCENTIE | Wear Your Mood</title>
+    <meta name="description" content="Tìm câu trả lời về sản phẩm, cách đặt hàng, thanh toán, giao hàng và chính sách hỗ trợ của SCENTIE.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/site-transition.css">
+    <link rel="stylesheet" href="../css/account-header.css">
+    <link rel="stylesheet" href="../css/faq.css">
+</head>
+<body class="faq-page">
+<header class="site-header">
+        <div class="container header-inner">
+
+            <button class="header-icon mobile-menu-btn"
+                    id="mobileMenuBtn"
+                    aria-label="Mở menu"
+                    aria-expanded="false">
+                ☰
+            </button>
+
+            <a href="../index.html" class="brand-logo">
+                <img src="../assets/images/logo/logo-scentie-den.png"
+                     alt="SCENTIE Logo">
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <a href="../index.html">TRANG CHỦ</a>
+                <a href="shop.html">SẢN PHẨM</a>
+                <a href="about.html">VỀ SCENTIE</a>
+                <a href="find-your-mood.html">TÌM MOOD</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <!-- SEARCH BUTTON -->
+                <button type="button"
+                        class="header-search-btn"
+                        id="searchOpenBtn"
+                        aria-label="Mở tìm kiếm"
+                        aria-controls="searchOverlay"
+                        aria-expanded="false">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="19"
+                         height="19"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.8"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="m20 20-4-4"></path>
+                    </svg>
+
+                    <span>Tìm kiếm mood của bạn...</span>
+                </button>
+
+                <!-- CART BUTTON -->
+                <a href="cart.html"
+                   class="header-cart"
+                   aria-label="Giỏ hàng">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="22"
+                         height="22"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.7"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                </a>
+
+                <!-- ACCOUNT BUTTON -->
+                <a href="account.html"
+                   class="header-account"
+                   aria-label="Đăng nhập hoặc đăng ký">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="21"
+                         height="21"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.7"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M5 21v-2a7 7 0 0 1 14 0v2"></path>
+                    </svg>
+
+                    <span>Đăng nhập / Đăng ký</span>
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+<main>
+    <section class="faq-hero">
+        <div class="faq-orb faq-orb-one"></div>
+        <div class="faq-orb faq-orb-two"></div>
+        <div class="faq-container faq-hero-inner">
+            <p class="faq-eyebrow"><span></span> SCENTIE HELP CENTER</p>
+            <h1>WE'RE HERE<br><em>TO HELP.</em></h1>
+            <p class="faq-hero-copy">Một chút giải đáp để hành trình tìm thấy mood của bạn luôn thật dễ dàng.</p>
+            <form class="faq-search" id="faqSearchForm" role="search">
+                <span class="faq-search-icon" aria-hidden="true">⌕</span>
+                <input id="faqSearchInput" type="search" placeholder="Bạn đang cần tìm câu trả lời nào?" autocomplete="off" aria-label="Tìm câu hỏi thường gặp">
+                <button type="submit">Tìm kiếm</button>
+            </form>
+            <div class="faq-hero-hint">GỢI Ý: <button type="button" data-faq-suggest="đặt hàng">Đặt hàng</button><button type="button" data-faq-suggest="giao hàng">Giao hàng</button><button type="button" data-faq-suggest="mùi hương">Mùi hương</button></div>
+        </div>
+        <div class="faq-hero-bottom"><span>FREQUENTLY ASKED QUESTIONS</span><span>01 — 04</span></div>
+    </section>
+
+    <section class="faq-main-section">
+        <div class="faq-container">
+            <div class="faq-section-heading">
+                <div>
+                    <p class="faq-eyebrow">A LITTLE CLARITY</p>
+                    <h2>Điều bạn muốn <em>biết.</em></h2>
+                </div>
+                <p class="faq-heading-note">Chọn chủ đề hoặc tìm kiếm từ khóa để tìm câu trả lời nhanh hơn.</p>
+            </div>
+
+            <div class="faq-category-grid" role="tablist" aria-label="Nhóm câu hỏi">
+                <button class="faq-category is-active" type="button" data-faq-category="all" aria-pressed="true"><span class="faq-category-icon">✳</span><span>Tất cả câu hỏi</span><small>12 câu hỏi</small></button>
+                <button class="faq-category" type="button" data-faq-category="product" aria-pressed="false"><span class="faq-category-icon">✧</span><span>Sản phẩm & mùi hương</span><small>03 câu hỏi</small></button>
+                <button class="faq-category" type="button" data-faq-category="order" aria-pressed="false"><span class="faq-category-icon">♡</span><span>Đặt hàng</span><small>03 câu hỏi</small></button>
+                <button class="faq-category" type="button" data-faq-category="shipping" aria-pressed="false"><span class="faq-category-icon">↗</span><span>Thanh toán & giao hàng</span><small>03 câu hỏi</small></button>
+                <button class="faq-category" type="button" data-faq-category="support" aria-pressed="false"><span class="faq-category-icon">☏</span><span>Đổi trả & hỗ trợ</span><small>03 câu hỏi</small></button>
+            </div>
+
+            <div class="faq-results-meta"><span id="faqResultCount">12 câu hỏi</span><button type="button" id="faqExpandAll">Mở tất cả <span>＋</span></button></div>
+            <div class="faq-list" id="faqList">
+                <section class="faq-group" data-faq-group="product">
+                    <div class="faq-group-heading"><span>01</span><h3>Sản phẩm & mùi hương</h3></div>
+                    <article class="faq-item" data-category="product"><button class="faq-question" aria-expanded="false"><span>SCENTIE là thương hiệu gì?</span><i></i></button><div class="faq-answer"><p>SCENTIE mang đến trải nghiệm hương thơm gắn với cảm xúc và phong cách cá nhân. Với tinh thần “Wear Your Mood”, bạn có thể chọn mùi hương phù hợp với mood và khoảnh khắc của mình.</p></div></article>
+                    <article class="faq-item" data-category="product"><button class="faq-question" aria-expanded="false"><span>Làm thế nào để chọn mùi hương phù hợp?</span><i></i></button><div class="faq-answer"><p>Bạn có thể khám phá từng dòng hương tại trang Sản phẩm hoặc trải nghiệm tính năng Find Your Mood để tham khảo gợi ý theo tâm trạng và phong cách mong muốn.</p></div></article>
+                    <article class="faq-item" data-category="product"><button class="faq-question" aria-expanded="false"><span>Các dòng Focus, Energy, Calm, Date và Fun khác nhau thế nào?</span><i></i></button><div class="faq-answer"><p>Mỗi dòng được xây dựng theo một sắc thái cảm xúc riêng: Focus cho lúc cần tập trung, Energy cho nguồn năng lượng tích cực, Calm cho cảm giác thư thái, Date cho những khoảnh khắc gần gũi và Fun cho tinh thần vui tươi. Bạn có thể xem mô tả chi tiết trên từng trang sản phẩm.</p></div></article>
+                </section>
+                <section class="faq-group" data-faq-group="order">
+                    <div class="faq-group-heading"><span>02</span><h3>Đặt hàng</h3></div>
+                    <article class="faq-item" data-category="order"><button class="faq-question" aria-expanded="false"><span>Làm thế nào để đặt hàng trên SCENTIE?</span><i></i></button><div class="faq-answer"><p>Chọn sản phẩm bạn yêu thích, thêm vào giỏ hàng, kiểm tra số lượng và nhấn tiến hành thanh toán. Sau đó, điền thông tin người nhận và địa chỉ giao hàng để hoàn tất đơn.</p></div></article>
+                    <article class="faq-item" data-category="order"><button class="faq-question" aria-expanded="false"><span>Tôi có cần tạo tài khoản để mua hàng không?</span><i></i></button><div class="faq-answer"><p>Bạn có thể thực hiện đặt hàng theo luồng khách hoặc đăng nhập tài khoản SCENTIE. Đăng nhập giúp bạn thuận tiện theo dõi thông tin tài khoản và các đơn hàng gắn với tài khoản của mình.</p></div></article>
+                    <article class="faq-item" data-category="order"><button class="faq-question" aria-expanded="false"><span>Làm sao để kiểm tra đơn hàng đã đặt?</span><i></i></button><div class="faq-answer"><p>Nếu bạn đã đăng nhập khi đặt hàng, hãy vào khu vực Tài khoản và chọn Đơn mua để xem thông tin đơn hàng. Với đơn đặt theo luồng khách, vui lòng lưu lại mã đơn hiển thị sau khi đặt hàng thành công.</p></div></article>
+                </section>
+                <section class="faq-group" data-faq-group="shipping">
+                    <div class="faq-group-heading"><span>03</span><h3>Thanh toán & giao hàng</h3></div>
+                    <article class="faq-item" data-category="shipping"><button class="faq-question" aria-expanded="false"><span>SCENTIE hiện hỗ trợ phương thức thanh toán nào?</span><i></i></button><div class="faq-answer"><p>Ở phiên bản hiện tại, website hỗ trợ thanh toán khi nhận hàng (COD). Bạn thanh toán cho đơn vị giao hàng khi nhận được sản phẩm.</p></div></article>
+                    <article class="faq-item" data-category="shipping"><button class="faq-question" aria-expanded="false"><span>Phí giao hàng được tính như thế nào?</span><i></i></button><div class="faq-answer"><p>Phí giao hàng sẽ được hiển thị trong phần tóm tắt đơn hàng tại bước thanh toán trước khi bạn xác nhận đặt hàng.</p></div></article>
+                    <article class="faq-item" data-category="shipping"><button class="faq-question" aria-expanded="false"><span>Khi nào tôi nhận được đơn hàng?</span><i></i></button><div class="faq-answer"><p>Thời gian giao hàng phụ thuộc vào địa chỉ nhận hàng và quá trình vận chuyển. Thông tin đơn hàng sẽ được cập nhật trong khu vực Đơn mua khi bạn đặt hàng bằng tài khoản.</p></div></article>
+                </section>
+                <section class="faq-group" data-faq-group="support">
+                    <div class="faq-group-heading"><span>04</span><h3>Đổi trả & hỗ trợ</h3></div>
+                    <article class="faq-item" data-category="support"><button class="faq-question" aria-expanded="false"><span>Tôi cần làm gì nếu nhận được sản phẩm bị lỗi?</span><i></i></button><div class="faq-answer"><p>Hãy lưu lại thông tin đơn hàng và hình ảnh tình trạng sản phẩm, sau đó liên hệ SCENTIE để được hỗ trợ kiểm tra và hướng dẫn xử lý.</p></div></article>
+                    <article class="faq-item" data-category="support"><button class="faq-question" aria-expanded="false"><span>Tôi có thể thay đổi thông tin giao hàng sau khi đặt không?</span><i></i></button><div class="faq-answer"><p>Nếu cần điều chỉnh thông tin, bạn nên liên hệ SCENTIE sớm nhất có thể và cung cấp mã đơn hàng. Việc thay đổi phụ thuộc vào tình trạng xử lý đơn.</p></div></article>
+                    <article class="faq-item" data-category="support"><button class="faq-question" aria-expanded="false"><span>Làm thế nào để liên hệ SCENTIE?</span><i></i></button><div class="faq-answer"><p>Bạn có thể sử dụng các kênh liên hệ được SCENTIE công bố trên website hoặc gửi yêu cầu qua kênh hỗ trợ của cửa hàng. Vui lòng cung cấp mã đơn nếu câu hỏi liên quan đến đơn hàng.</p></div></article>
+                </section>
+            </div>
+            <div class="faq-no-results" id="faqNoResults" hidden><span>✧</span><h3>Chưa tìm thấy câu trả lời phù hợp</h3><p>Thử một từ khóa khác hoặc chọn chủ đề khác nhé.</p><button type="button" id="faqClearSearch">Xóa tìm kiếm</button></div>
+        </div>
+    </section>
+
+    <section class="faq-contact">
+        <div class="faq-container faq-contact-inner">
+            <div><p class="faq-eyebrow">STILL NEED A HAND?</p><h2>Chúng mình luôn<br><em>sẵn sàng lắng nghe.</em></h2><p>Nếu bạn chưa tìm thấy điều mình cần, hãy ghé thăm các kênh thông tin của SCENTIE.</p></div>
+            <a class="faq-contact-link" href="about.html">Khám phá về SCENTIE <span>↗</span></a>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-main">
+
+                <div class="footer-brand">
+
+<a href="../index.html" class="footer-logo">
+    <img src="../assets/images/logo/logo-scentie-trang.png"
+         alt="SCENTIE Logo">
+</a>
+
+                    <p>
+                        Wear your mood.<br>
+                        Mang theo mood của bạn, ở bất cứ đâu.
+                    </p>
+
+                </div>
+
+
+<div class="footer-column">
+    <h3>KHÁM PHÁ</h3>
+
+    <a href="shop.html">Sản phẩm</a>
+    <a href="collections.html">Bộ sưu tập</a>
+    <a href="about.html">Về SCENTIE</a>
+    <a href="find-your-mood.html">Tìm mood</a>
+</div>
+
+<div class="footer-column">
+    <h3>HỖ TRỢ</h3>
+
+    <a href="faq.html">Câu hỏi thường gặp</a>
+    <a href="faq.html">Hướng dẫn sử dụng</a>
+    <a href="faq.html">Chính sách mua hàng</a>
+    <a href="faq.html">Liên hệ</a>
+</div>
+    </footer>
+
+
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+    <div class="search-panel">
+        <button type="button" class="search-close" id="searchCloseBtn" aria-label="Đóng tìm kiếm">&times;</button>
+        <p class="search-label">SCENTIE SEARCH ✦</p>
+        <h2>Bạn đang tìm kiếm sản phẩm nào?</h2>
+        <form class="search-form" id="searchForm">
+            <input type="search" id="searchInput" placeholder="Nhập tên sản phẩm, mùi hương..." autocomplete="off" aria-label="Nhập từ khóa tìm kiếm">
+            <button type="submit" class="search-submit" aria-label="Tìm kiếm">⌕</button>
+        </form>
+        <div class="search-suggestions"><p>GỢI Ý TÌM KIẾM</p><div class="search-tags"><button type="button" data-mood="focus">Focus</button><button type="button" data-mood="energy">Energy</button><button type="button" data-mood="calm">Calm</button><button type="button" data-mood="date">Date</button><button type="button" data-mood="fun">Fun</button></div></div>
+        <div class="search-live-results" id="searchLiveResults"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase-client.js"></script>
+<script src="../js/account-header.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/products.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/faq.js"></script>
+</body>
+</html>
