@@ -1,0 +1,447 @@
+/* =========================================================
+   SCENTIE — DELIVERY ADDRESS VIEW LAYOUT FIX
+   Scoped only to the authenticated address-management view.
+   Keeps the existing buttercream / liquid-glass visual system.
+   ========================================================= */
+
+.account-page #view-addresses {
+  display: block;
+  min-width: 0;
+  width: 100%;
+}
+
+/* Page heading: the previous selector only styled the overview
+   heading, leaving this view with browser-default typography. */
+.account-page #view-addresses > .content-heading {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  min-height: 146px;
+  box-sizing: border-box;
+  margin: 0 0 18px;
+  padding: 27px 30px;
+  border: 1px solid rgba(255,255,255,.94);
+  border-radius: 24px;
+  background: linear-gradient(112deg,
+    rgba(255,248,229,.94) 0%,
+    rgba(246,235,202,.93) 58%,
+    rgba(239,224,182,.88) 100%);
+  box-shadow: 0 18px 45px rgba(139,113,20,.08),
+    inset 0 1px 0 rgba(255,255,255,.95);
+  backdrop-filter: blur(24px) saturate(135%);
+  -webkit-backdrop-filter: blur(24px) saturate(135%);
+}
+
+.account-page #view-addresses > .content-heading::before {
+  position: absolute;
+  z-index: -1;
+  top: -112px;
+  right: 8%;
+  width: 230px;
+  height: 230px;
+  content: "";
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%,
+    #fff 0 5%, rgba(255,255,255,.66) 14%,
+    rgba(255,255,255,.24) 32%, rgba(232,212,156,.34) 60%, transparent 73%);
+  box-shadow: inset -12px -15px 30px rgba(198,166,91,.12),
+    0 18px 45px rgba(157,129,69,.10);
+  animation: addressHeroBubble 9s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes addressHeroBubble {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(14px) scale(1.05); }
+}
+
+.account-page #view-addresses > .content-heading > div {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.account-page #view-addresses > .content-heading .account-eyebrow {
+  margin: 0 0 9px;
+  color: #a28648;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .2em;
+  line-height: 1.5;
+}
+
+.account-page #view-addresses > .content-heading h1 {
+  margin: 0;
+  color: #3d3425;
+  font-size: clamp(27px, 3vw, 37px);
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: -.055em;
+}
+
+.account-page #view-addresses > .content-heading p:not(.account-eyebrow) {
+  max-width: 520px;
+  margin: 9px 0 0;
+  color: #857858;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+/* The global primary button is intentionally broad in some contexts.
+   The add-address action should remain a compact control in this header. */
+.account-page #view-addresses #addAddressBtn {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: auto;
+  min-width: 166px;
+  max-width: 100%;
+  min-height: 46px;
+  margin: 0;
+  padding: 0 20px;
+  border-radius: 13px;
+  color: #fffdf7;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/* Empty state/list sizing. */
+.account-page #view-addresses .address-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 13px;
+  width: 100%;
+  min-width: 0;
+  margin: 0 0 0;
+}
+
+.account-page #view-addresses .address-list > .empty-state {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 68px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 17px 21px;
+  border: 1px dashed rgba(218,203,169,.82);
+  border-radius: 16px;
+  background: linear-gradient(110deg, rgba(255,255,255,.78), rgba(255,250,235,.72));
+  color: #9b8d72;
+  font-size: 12px;
+  line-height: 1.65;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.92);
+}
+
+/* Address editor surface and heading. */
+.account-page #view-addresses .address-editor {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 25px 28px 27px;
+  border: 1px solid rgba(255,255,255,.94);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(255,255,255,.88), rgba(255,253,242,.76));
+  box-shadow: 0 18px 50px rgba(128,107,58,.07), inset 0 1px 0 rgba(255,255,255,.96);
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+}
+
+.account-page #view-addresses .address-editor .card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 0 0 22px;
+  padding: 0 0 17px;
+  border-bottom: 1px solid rgba(232,221,197,.78);
+}
+
+.account-page #view-addresses .address-editor .account-eyebrow {
+  margin: 0 0 8px;
+  color: #a28648;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .2em;
+  line-height: 1.5;
+}
+
+.account-page #view-addresses .address-editor .card-heading h2 {
+  margin: 0;
+  color: #3e3628;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -.025em;
+}
+
+.account-page #view-addresses #closeAddressEditor {
+  display: inline-grid;
+  flex: 0 0 36px;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #eadfc8;
+  border-radius: 11px;
+  background: rgba(255,255,255,.78);
+  color: #89764e;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.account-page #view-addresses #closeAddressEditor:hover {
+  transform: rotate(90deg);
+  border-color: #d8c18a;
+  background: #fff8e8;
+}
+
+/* The original source had no base layout rules for .address-form.
+   Consequently labels and inputs fell back to inline browser defaults. */
+.account-page #view-addresses #addressForm.address-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 18px 22px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.account-page #view-addresses #addressForm > input[type="hidden"] {
+  display: none !important;
+}
+
+.account-page #view-addresses #addressForm .form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.account-page #view-addresses #addressForm .form-field.full {
+  grid-column: 1 / -1;
+}
+
+.account-page #view-addresses #addressForm .form-field label {
+  display: block;
+  width: 100%;
+  margin: 0;
+  color: #78694d;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.account-page #view-addresses #addressForm .form-field input,
+.account-page #view-addresses #addressForm .form-field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 15px;
+  border: 1px solid #e8ddc5;
+  border-radius: 13px;
+  outline: none;
+  background: rgba(255,254,249,.92);
+  color: #493f2e;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  box-shadow: inset 0 1px 2px rgba(120,95,45,.025);
+  transition: border-color .22s ease, box-shadow .22s ease, background .22s ease;
+}
+
+.account-page #view-addresses #addressForm .form-field input {
+  height: 48px;
+}
+
+.account-page #view-addresses #addressForm .form-field textarea {
+  min-height: 92px;
+  padding: 12px 15px;
+  resize: vertical;
+}
+
+.account-page #view-addresses #addressForm .form-field input::placeholder,
+.account-page #view-addresses #addressForm .form-field textarea::placeholder {
+  color: #b4a993;
+}
+
+.account-page #view-addresses #addressForm .form-field input:focus,
+.account-page #view-addresses #addressForm .form-field textarea:focus {
+  border-color: #c6a65b;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(198,166,91,.12), 0 5px 14px rgba(137,112,57,.05);
+}
+
+.account-page #view-addresses #addressForm .default-check {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-self: start;
+  gap: 10px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 11px 14px;
+  border: 1px solid rgba(232,221,197,.8);
+  border-radius: 12px;
+  background: rgba(255,252,242,.78);
+  color: #74684f;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.account-page #view-addresses #addressForm .default-check input[type="checkbox"] {
+  display: inline-block;
+  flex: 0 0 17px;
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  accent-color: #b99a53;
+  cursor: pointer;
+}
+
+.account-page #view-addresses #addressForm .form-actions {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 11px;
+  width: 100%;
+  margin: 2px 0 0;
+}
+
+.account-page #view-addresses #addressSaveBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  width: auto;
+  min-width: 174px;
+  min-height: 46px;
+  margin: 0;
+  padding: 0 20px;
+  color: #fffdf7;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 850;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.account-page #view-addresses #addressSaveBtn span {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.account-page #view-addresses #addressForm .secondary-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 86px;
+  min-height: 44px;
+  margin: 0;
+  padding: 0 18px;
+  border: 1px solid #e8dcc0;
+  border-radius: 12px;
+  background: rgba(255,255,255,.78);
+  color: #817252;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.account-page #view-addresses #addressForm .secondary-action:hover {
+  transform: translateY(-2px);
+  border-color: #d8c18a;
+  background: #fff9e9;
+}
+
+.account-page #view-addresses #addressMessage {
+  margin-top: 15px;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .account-page #view-addresses > .content-heading {
+    min-height: 132px;
+    padding: 23px 24px;
+  }
+}
+
+@media (max-width: 720px) {
+  .account-page #view-addresses > .content-heading {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 17px;
+    padding: 22px 20px;
+    border-radius: 20px;
+  }
+
+  .account-page #view-addresses #addAddressBtn {
+    align-self: flex-start;
+    width: auto;
+    min-width: 156px;
+  }
+
+  .account-page #view-addresses .address-editor {
+    padding: 20px 17px 21px;
+    border-radius: 18px;
+  }
+
+  .account-page #view-addresses #addressForm.address-form {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .account-page #view-addresses #addressForm .form-field.full,
+  .account-page #view-addresses #addressForm .default-check,
+  .account-page #view-addresses #addressForm .form-actions {
+    grid-column: 1;
+  }
+
+  .account-page #view-addresses #addressForm .form-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .account-page #view-addresses #addressSaveBtn,
+  .account-page #view-addresses #addressForm .secondary-action {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .account-page #view-addresses > .content-heading::before {
+    animation: none;
+  }
+}
